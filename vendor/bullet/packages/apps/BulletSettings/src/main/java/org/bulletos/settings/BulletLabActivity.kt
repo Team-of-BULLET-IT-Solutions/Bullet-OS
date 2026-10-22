@@ -1,21 +1,22 @@
 /*
  * Copyright (C) 2026 BULLET IT Solutions
- * Bullet Lab - Performance, Theme & Privacy Settings
+ * Bullet-OS Settings Extension - iOS Inset Grouped Design Language
  */
 
 package org.bulletos.settings
 
 import android.app.Activity
+import android.graphics.Color
+import android.graphics.Typeface
 import android.net.LocalSocket
 import android.net.LocalSocketAddress
 import android.os.Bundle
-import android.widget.Button
+import android.view.Gravity
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
-import java.io.InputStream
 import java.io.OutputStream
 
 class BulletLabActivity : Activity() {
@@ -26,86 +27,146 @@ class BulletLabActivity : Activity() {
     }
 
     private fun setupViews() {
-        val rootLayout = LinearLayout(this).apply {
+        val root = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
-            setPadding(40, 60, 40, 40)
-            setBackgroundColor(android.graphics.Color.parseColor("#0B0E14"))
+            setBackgroundColor(Color.parseColor("#000000"))
+            setPadding(36, 50, 36, 40)
         }
 
+        // Header Title (iOS large title)
         val title = TextView(this).apply {
             text = "⚡ Bullet Lab"
-            textSize = 28f
-            setTextColor(android.graphics.Color.parseColor("#00F0FF"))
-            typeface = android.graphics.Typeface.DEFAULT_BOLD
-            setPadding(0, 0, 0, 16)
+            textSize = 34f
+            setTextColor(Color.WHITE)
+            typeface = Typeface.DEFAULT_BOLD
+            setPadding(0, 0, 0, 6)
         }
 
         val subtitle = TextView(this).apply {
-            text = "Engineered by BULLET IT Solutions for Pure Performance"
-            textSize = 14f
-            setTextColor(android.graphics.Color.parseColor("#94A3B8"))
-            setPadding(0, 0, 0, 40)
+            text = "Engineered by BULLET IT Solutions (iOS Fluid Shell)"
+            textSize = 13f
+            setTextColor(Color.parseColor("#8E8E93"))
+            setPadding(0, 0, 0, 24)
         }
 
-        rootLayout.addView(title)
-        rootLayout.addView(subtitle)
+        root.addView(title)
+        root.addView(subtitle)
 
-        // Boost Mode Toggle
+        // BULLET ID Profile Card (iOS profile card)
+        val profileCard = LinearLayout(this).apply {
+            orientation = LinearLayout.HORIZONTAL
+            setBackgroundColor(Color.parseColor("#1C1C1E"))
+            setPadding(30, 24, 30, 24)
+            gravity = Gravity.CENTER_VERTICAL
+            val avatar = TextView(this@BulletLabActivity).apply {
+                text = "⚡"
+                textSize = 24f
+                setTextColor(Color.BLACK)
+                setBackgroundColor(Color.parseColor("#00F0FF"))
+                gravity = Gravity.CENTER
+                layoutParams = LinearLayout.LayoutParams(110, 110).apply {
+                    rightMargin = 28
+                }
+            }
+            val details = LinearLayout(this@BulletLabActivity).apply {
+                orientation = LinearLayout.VERTICAL
+                val name = TextView(this@BulletLabActivity).apply {
+                    text = "BULLET IT Solutions"
+                    textSize = 17f
+                    setTextColor(Color.WHITE)
+                    typeface = Typeface.DEFAULT_BOLD
+                }
+                val sub = TextView(this@BulletLabActivity).apply {
+                    text = "BULLET ID, Cloud & Security"
+                    textSize = 12f
+                    setTextColor(Color.parseColor("#8E8E93"))
+                }
+                addView(name)
+                addView(sub)
+            }
+            addView(avatar)
+            addView(details)
+        }
+        root.addView(profileCard)
+
+        // Section 1: Performance (iOS Inset Grouped Box)
+        val perfGroup = createSection("PERFORMANCE & KERNEL")
         val boostSwitch = Switch(this).apply {
-            text = "🚀 Bullet Boost Mode (Lock Peak CPU/GPU)"
-            setTextColor(android.graphics.Color.WHITE)
-            textSize = 16f
-            setPadding(0, 20, 0, 20)
+            text = "🚀 Bullet Boost (Gaming Overclock)"
+            setTextColor(Color.WHITE)
+            textSize = 15f
+            setPadding(0, 14, 0, 14)
             setOnCheckedChangeListener { _, isChecked ->
-                val command = if (isChecked) "PROFILE_BOOST" else "PROFILE_BALANCED"
-                sendCommandToDaemon(command)
-                Toast.makeText(this@BulletLabActivity, "Bullet Governor: " + if(isChecked) "Performance" else "Balanced", Toast.LENGTH_SHORT).show()
+                val cmd = if (isChecked) "PROFILE_BOOST" else "PROFILE_BALANCED"
+                sendCommand(cmd)
+                Toast.makeText(this@BulletLabActivity, "Governor: " + if (isChecked) "Performance" else "Balanced", Toast.LENGTH_SHORT).show()
             }
         }
-        rootLayout.addView(boostSwitch)
+        perfGroup.addView(boostSwitch)
+        root.addView(perfGroup)
 
-        // Privacy Shield Toggle
-        val privacySwitch = Switch(this).apply {
-            text = "🛡️ Bullet Shield (Strict Sensor & Network Guard)"
-            setTextColor(android.graphics.Color.WHITE)
-            textSize = 16f
+        // Section 2: Privacy Shield
+        val shieldGroup = createSection("BULLET SHIELD SECURITY")
+        val shieldSwitch = Switch(this).apply {
+            text = "🛡️ Sensor Hardware Kill-switch"
+            setTextColor(Color.WHITE)
+            textSize = 15f
             isChecked = true
-            setPadding(0, 20, 0, 20)
+            setPadding(0, 14, 0, 14)
             setOnCheckedChangeListener { _, isChecked ->
-                Toast.makeText(this@BulletLabActivity, "Bullet Shield: " + if(isChecked) "Hardened" else "Standard", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@BulletLabActivity, "Shield: " + if (isChecked) "Hardened" else "Standard", Toast.LENGTH_SHORT).show()
             }
         }
-        rootLayout.addView(privacySwitch)
+        shieldGroup.addView(shieldSwitch)
+        root.addView(shieldGroup)
 
-        // System Info card
-        val infoCard = LinearLayout(this).apply {
-            orientation = LinearLayout.VERTICAL
-            setBackgroundColor(android.graphics.Color.parseColor("#151B26"))
-            setPadding(30, 30, 30, 30)
-            val infoText = TextView(this@BulletLabActivity).apply {
-                text = "OS Version: Bullet-OS 1.0 (Kinetic)\nKernel: Linux 6.1 LTS - Bullet Kernel\nAndroid Base: 14.0 (API 34)\nTeam: BULLET IT Solutions"
-                setTextColor(android.graphics.Color.parseColor("#E2E8F0"))
-                textSize = 14f
-                setLineSpacing(10f, 1f)
-            }
-            addView(infoText)
+        // Section 3: About
+        val aboutGroup = createSection("SYSTEM SPECIFICATIONS")
+        val infoText = TextView(this).apply {
+            text = "Operating System: Bullet-OS 1.0 (Kinetic)\nUI Experience: Apple iOS Fluid Style\nBase Foundation: Linux 6.1 LTS + AOSP 14\nOwner & Maintainer: BULLET IT Solutions"
+            setTextColor(Color.parseColor("#C7C7CC"))
+            textSize = 13f
+            setLineSpacing(12f, 1f)
+            setPadding(0, 8, 0, 8)
         }
-        rootLayout.addView(infoCard)
+        aboutGroup.addView(infoText)
+        root.addView(aboutGroup)
 
-        val scrollView = ScrollView(this).apply {
-            addView(rootLayout)
+        val scroll = ScrollView(this).apply {
+            addView(root)
         }
-        setContentView(scrollView)
+        setContentView(scroll)
     }
 
-    private fun sendCommandToDaemon(command: String) {
+    private fun createSection(headerTitle: String): LinearLayout {
+        val container = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            setPadding(0, 24, 0, 0)
+        }
+        val header = TextView(this).apply {
+            text = headerTitle
+            textSize = 11f
+            setTextColor(Color.parseColor("#00F0FF"))
+            typeface = Typeface.DEFAULT_BOLD
+            setPadding(12, 0, 0, 10)
+        }
+        val card = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            setBackgroundColor(Color.parseColor("#1C1C1E"))
+            setPadding(30, 16, 30, 16)
+        }
+        container.addView(header)
+        container.addView(card)
+        return card
+    }
+
+    private fun sendCommand(cmd: String) {
         Thread {
             try {
                 val socket = LocalSocket()
-                val address = LocalSocketAddress("/dev/socket/bulletd", LocalSocketAddress.Namespace.FILESYSTEM)
-                socket.connect(address)
+                socket.connect(LocalSocketAddress("/dev/socket/bulletd", LocalSocketAddress.Namespace.FILESYSTEM))
                 val out: OutputStream = socket.outputStream
-                out.write(command.toByteArray())
+                out.write(cmd.toByteArray())
                 out.flush()
                 socket.close()
             } catch (e: Exception) {

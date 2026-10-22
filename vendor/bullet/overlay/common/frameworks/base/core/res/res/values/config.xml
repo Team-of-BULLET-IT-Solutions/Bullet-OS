@@ -2,31 +2,39 @@
 <!--
 /*
 ** Copyright (C) 2026 BULLET IT Solutions
-** Licensed under the Apache License, Version 2.0
+** Bullet-OS Framework Resource Overlays (Apple iOS Fluid Shell Configuration)
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Enable gesture navigation as default navigation mode -->
+    <!-- Enable gesture navigation as default navigation mode (iOS Home Bar style) -->
     <integer name="config_navBarInteractionMode">2</integer>
 
     <!-- Enable system-wide rounded corners & blur -->
     <bool name="config_enableBlur">true</bool>
 
-    <!-- Enable ambient display / pulse on new notifications -->
-    <bool name="config_dozePulsePickup">true</bool>
-    <bool name="config_pulseOnNewNotifications">true</bool>
+    <!-- Continuous Curvature Squircle Icon Mask (Apple iOS Superellipse) -->
+    <string name="config_icon_mask" translatable="false">"M 50,0 C 70,0 100,0 100,50 C 100,100 70,100 50,100 C 0,100 0,70 0,50 C 0,0 30,0 50,0 Z"</string>
+
+    <!-- Rounded Corner Radii for Modern Displays (iPhone-style curvature) -->
+    <dimen name="rounded_corner_radius">46dp</dimen>
+    <dimen name="rounded_corner_radius_top">46dp</dimen>
+    <dimen name="rounded_corner_radius_bottom">46dp</dimen>
+
+    <!-- Status Bar Height configured for Bullet Island cutout -->
+    <dimen name="status_bar_height">48dp</dimen>
+    <dimen name="status_bar_height_portrait">48dp</dimen>
 
     <!-- Default screen timeout: 2 minutes -->
     <integer name="config_screenOffDelayDefault">120000</integer>
 
-    <!-- Allow devices to use up to 120Hz display refresh rates -->
+    <!-- 120Hz ProMotion Display Support -->
     <integer name="config_defaultRefreshRate">120</integer>
     <integer name="config_defaultPeakRefreshRate">120</integer>
 
     <!-- Modern haptics profile -->
     <bool name="config_enableHapticFeedback">true</bool>
 
-    <!-- Bullet-OS Quick Settings Columns -->
-    <integer name="quick_settings_num_columns">3</integer>
+    <!-- Quick Settings / Control Center Columns (iOS Modular Grid) -->
+    <integer name="quick_settings_num_columns">2</integer>
     <integer name="quick_settings_max_rows">4</integer>
 </resources>
