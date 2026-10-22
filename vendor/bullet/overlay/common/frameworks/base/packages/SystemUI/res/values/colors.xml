@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright (C) 2026 BULLET IT Solutions
+** Bullet-OS SystemUI Cyber-Kinetic Color Palette
+*/
+-->
+<resources>
+    <!-- Bullet-OS Primary Colors -->
+    <color name="bullet_primary">#00F0FF</color>
+    <color name="bullet_secondary">#FF5500</color>
+    <color name="bullet_background_dark">#0B0E14</color>
+    <color name="bullet_surface_dark">#151B26</color>
+    <color name="bullet_card_dark">#1E2638</color>
+    
+    <!-- Accent Overrides for SystemUI -->
+    <color name="system_accent1_600">#00F0FF</color>
+    <color name="system_accent2_600">#00D1FF</color>
+    <color name="system_neutral1_900">#0B0E14</color>
+    <color name="system_neutral2_800">#151B26</color>
+    
+    <!-- Quick Settings Tiles -->
+    <color name="qs_tile_active_color">#00F0FF</color>
+    <color name="qs_tile_inactive_color">#26334D</color>
+</resources>

@@ -1,0 +1,20 @@
+#
+# Copyright (C) 2026 BULLET IT Solutions
+# SELinux Policy for bulletd
+#
+
+type bulletd, domain, coredomain;
+type bulletd_exec, exec_type, file_type, system_file_type;
+
+init_daemon_domain(bulletd)
+
+# Allow bulletd to modify CPU frequencies & sysfs
+allow bulletd sysfs_devices_system_cpu:file rw_file_perms;
+allow bulletd sysfs_devices_system_cpu:dir r_dir_perms;
+allow bulletd sysfs_zram:file rw_file_perms;
+allow bulletd sysfs_zram:dir r_dir_perms;
+
+# IPC Socket permissions
+allow bulletd bulletd_socket:sock_file create_file_perms;
+allow system_server bulletd:unix_stream_socket connectto;
+allow platform_app bulletd:unix_stream_socket connectto;

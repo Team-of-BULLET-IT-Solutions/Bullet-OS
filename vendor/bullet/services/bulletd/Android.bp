@@ -1,0 +1,23 @@
+//
+// Copyright (C) 2026 BULLET IT Solutions
+// Bullet Daemon Build Configuration
+//
+
+cc_binary {
+    name: "bulletd",
+    srcs: ["bulletd.cpp"],
+    init_rc: ["bulletd.rc"],
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wextra",
+        "-O3",
+    ],
+    shared_libs: [
+        "libbase",
+        "liblog",
+        "libcutils",
+    ],
+    vendor_available: false,
+    system_ext_specific: true,
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- Remote Repositories -->
+  <remote name="aosp"
+          fetch="https://android.googlesource.com"
+          review="android-review.googlesource.com"
+          revision="refs/tags/android-14.0.0_r50" />
+
+  <remote name="bullet"
+          fetch="https://github.com/Team-of-BULLET-IT-Solutions"
+          revision="main" />
+
+  <default revision="refs/tags/android-14.0.0_r50"
+           remote="aosp"
+           sync-j="4" />
+
+  <!-- Bullet-OS Core Custom Repositories -->
+  <project path="vendor/bullet" name="Bullet-OS" remote="bullet" revision="main">
+    <copyfile src="build/envsetup.sh" dest="bullet_envsetup.sh" />
+  </project>
+
+  <!-- Include Core AOSP Manifest -->
+  <include name="snippets/aosp.xml" />
+  <include name="bullet.xml" />
+</manifest>

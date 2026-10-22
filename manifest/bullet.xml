@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- Bullet-OS Specific Overlays & Modules -->
+  <project path="device/bullet/generic_arm64" name="device_bullet_generic_arm64" remote="bullet" revision="main" />
+  <project path="device/bullet/generic_x86_64" name="device_bullet_generic_x86_64" remote="bullet" revision="main" />
+  <project path="packages/apps/BulletLauncher" name="packages_apps_BulletLauncher" remote="bullet" revision="main" />
+  <project path="packages/apps/BulletSettings" name="packages_apps_BulletSettings" remote="bullet" revision="main" />
+  <project path="packages/apps/BulletTerminal" name="packages_apps_BulletTerminal" remote="bullet" revision="main" />
+  <project path="packages/apps/BulletUpdater" name="packages_apps_BulletUpdater" remote="bullet" revision="main" />
+  
+  <!-- Hardware Abstraction & Performance Services -->
+  <project path="hardware/bullet/interfaces" name="hardware_bullet_interfaces" remote="bullet" revision="main" />
+</manifest>

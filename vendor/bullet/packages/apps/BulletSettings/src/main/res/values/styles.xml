@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.BulletSettings" parent="android:Theme.Material.Settings">
+        <item name="android:colorPrimary">#00F0FF</item>
+        <item name="android:colorAccent">#00F0FF</item>
+        <item name="android:windowBackground">#0B0E14</item>
+    </style>
+</resources>

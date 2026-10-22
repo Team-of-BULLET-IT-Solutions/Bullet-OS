@@ -1,0 +1,16 @@
+#
+# Copyright (C) 2026 BULLET IT Solutions
+# Bullet Daemon Init Definition
+#
+
+service bulletd /system_ext/bin/bulletd
+    class main
+    user root
+    group system root
+    capabilities SYS_NICE SYS_ADMIN
+    writepid /dev/cpuset/foreground/tasks
+    socket bulletd stream 0660 root system
+    seclabel u:r:bulletd:s0
+
+on boot
+    start bulletd

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright (C) 2026 BULLET IT Solutions
+** Bullet-OS Settings Customizations
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- OS Branding -->
+    <string name="bullet_os_version">Bullet-OS Version</string>
+    <string name="bullet_os_edition">Kinetic Edition</string>
+    <string name="bullet_maintainer">Team BULLET IT Solutions</string>
+    <string name="bullet_kernel_info">Bullet Linux Kernel</string>
+    <string name="bullet_security_patch">Bullet Guard Security</string>
+
+    <!-- Bullet Lab Category -->
+    <string name="bullet_lab_title">Bullet Lab</string>
+    <string name="bullet_lab_summary">Performance governors, gaming boost, and privacy engine</string>
+    <string name="bullet_boost_title">Bullet Boost Mode</string>
+    <string name="bullet_boost_summary">Lock CPU frequencies to maximum and prioritize active foreground rendering</string>
+    <string name="bullet_privacy_title">Bullet Shield</string>
+    <string name="bullet_privacy_summary">Strict sensor isolation, clipboard guard, and network privacy</string>
+</resources>

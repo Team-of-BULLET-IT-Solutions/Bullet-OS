@@ -1,0 +1,14 @@
+//
+// Copyright (C) 2026 BULLET IT Solutions
+// BulletTerminal Build Specification
+//
+
+android_app {
+    name: "BulletTerminal",
+    srcs: ["src/main/java/**/*.kt", "src/main/java/**/*.java"],
+    manifest: "src/main/AndroidManifest.xml",
+    platform_apis: true,
+    certificate: "platform",
+    system_ext_specific: true,
+    privileged: true,
+}

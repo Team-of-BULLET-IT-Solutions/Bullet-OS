@@ -1,0 +1,7 @@
+#
+# Copyright (C) 2026 BULLET IT Solutions
+# File contexts for Bullet-OS
+#
+
+/(system_ext|system/system_ext)/bin/bulletd    u:object_r:bulletd_exec:s0
+/dev/socket/bulletd                            u:object_r:bulletd_socket:s0

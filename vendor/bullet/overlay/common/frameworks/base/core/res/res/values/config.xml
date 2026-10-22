@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright (C) 2026 BULLET IT Solutions
+** Licensed under the Apache License, Version 2.0
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Enable gesture navigation as default navigation mode -->
+    <integer name="config_navBarInteractionMode">2</integer>
+
+    <!-- Enable system-wide rounded corners & blur -->
+    <bool name="config_enableBlur">true</bool>
+
+    <!-- Enable ambient display / pulse on new notifications -->
+    <bool name="config_dozePulsePickup">true</bool>
+    <bool name="config_pulseOnNewNotifications">true</bool>
+
+    <!-- Default screen timeout: 2 minutes -->
+    <integer name="config_screenOffDelayDefault">120000</integer>
+
+    <!-- Allow devices to use up to 120Hz display refresh rates -->
+    <integer name="config_defaultRefreshRate">120</integer>
+    <integer name="config_defaultPeakRefreshRate">120</integer>
+
+    <!-- Modern haptics profile -->
+    <bool name="config_enableHapticFeedback">true</bool>
+
+    <!-- Bullet-OS Quick Settings Columns -->
+    <integer name="quick_settings_num_columns">3</integer>
+    <integer name="quick_settings_max_rows">4</integer>
+</resources>
