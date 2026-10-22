@@ -1,0 +1,25 @@
+# AOSP Build Output
+out/
+*.img
+*.zip
+*.tar.gz
+*.iso
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE / Editor Files
+.idea/
+.vscode/
+*.iml
+*.swp
+*~
+
+# OS artifacts
+Thumbs.db
+.DS_Store
+
+# Temporary build artifacts
+build_logs/
+releases/
