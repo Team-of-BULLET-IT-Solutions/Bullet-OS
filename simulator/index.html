@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bullet-OS | Interactive Mobile Simulator</title>
+    <style>
+        :root {
+            --bg-color: #05080e;
+            --phone-body: #111827;
+            --phone-border: #1e293b;
+            --primary-accent: #00f0ff;
+            --secondary-accent: #ff5500;
+            --screen-bg: #0b0e14;
+            --card-bg: rgba(21, 27, 38, 0.85);
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            user-select: none;
+        }
+
+        body {
+            background: radial-gradient(circle at top, #0f172a 0%, #020617 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Branding Panel */
+        .info-panel {
+            max-width: 440px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0, 240, 255, 0.15);
+            color: var(--primary-accent);
+            border: 1px solid rgba(0, 240, 255, 0.4);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #ffffff 40%, var(--primary-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            color: var(--text-sub);
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .features-list li {
+            margin-bottom: 12px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #cbd5e1;
+        }
+
+        .features-list li span.bullet {
+            color: var(--primary-accent);
+            font-weight: bold;
+        }
+
+        /* Phone Chassis */
+        .phone-frame {
+            width: 380px;
+            height: 760px;
+            background: #111622;
+            border-radius: 48px;
+            padding: 12px;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 240, 255, 0.15);
+            border: 3px solid #2a3449;
+            position: relative;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: var(--screen-bg);
+            border-radius: 38px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+        }
+
+        /* Punch Hole Camera */
+        .notch {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background: #000;
+            border-radius: 50%;
+            z-index: 100;
+            border: 1px solid #1e293b;
+        }
+
+        /* Status Bar */
+        .status-bar {
+            height: 38px;
+            padding: 8px 24px 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: #fff;
+            z-index: 90;
+            cursor: pointer;
+        }
+
+        .status-bar .icons {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Quick Settings Shade */
+        .qs-shade {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 14, 20, 0.95);
+            backdrop-filter: blur(25px);
+            z-index: 80;
+            transition: top 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 48px 20px 20px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .qs-shade.open {
+            top: 0;
+        }
+
+        .qs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .qs-tile {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .qs-tile.active {
+            background: var(--primary-accent);
+            color: #05080e;
+            border-color: var(--primary-accent);
+        }
+
+        .qs-tile.active .tile-sub {
+            color: #0f172a;
+        }
+
+        .tile-icon {
+            font-size: 20px;
+        }
+
+        .tile-title {
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .tile-sub {
+            font-size: 11px;
+            color: var(--text-sub);
+        }
+
+        /* Screen Viewport */
+        .screen-content {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .view-home {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 16px 20px 20px 20px;
+            justify-content: space-between;
+        }
+
+        /* Clock & Weather Widget */
+        .widget-clock {
+            margin-top: 24px;
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.4), rgba(15, 23, 42, 0.3));
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 24px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .widget-time {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1;
+            color: #fff;
+            letter-spacing: -2px;
+        }
+
+        .widget-date {
+            font-size: 13px;
+            color: var(--primary-accent);
+            margin-top: 6px;
+            font-weight: 600;
+        }
+
+        .perf-bar {
+            margin-top: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            color: var(--text-sub);
+        }
+
+        .perf-track {
+            flex: 1;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .perf-fill {
+            width: 78%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+        }
+
+        /* App Grid */
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: auto;
+            margin-bottom: 16px;
+        }
+
+        .app-icon-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+
+        .app-icon-wrap:active {
+            transform: scale(0.92);
+        }
+
+        .app-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            background: #1e293b;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .app-name {
+            font-size: 11px;
+            color: #cbd5e1;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* App Windows */
+        .app-window {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0b0e14;
+            z-index: 60;
+            display: none;
+            flex-direction: column;
+            padding: 16px;
+        }
+
+        .app-window.active {
+            display: flex;
+        }
+
+        .app-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .app-header h3 {
+            font-size: 16px;
+            color: var(--primary-accent);
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Terminal inside phone */
+        .terminal-box {
+            flex: 1;
+            background: #05080e;
+            border-radius: 12px;
+            padding: 12px;
+            font-family: monospace;
+            font-size: 11px;
+            color: #00f0ff;
+            overflow-y: auto;
+            border: 1px solid #1e293b;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .terminal-history {
+            flex: 1;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            line-height: 1.4;
+        }
+
+        .terminal-input-row {
+            display: flex;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .terminal-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-family: monospace;
+            font-size: 12px;
+        }
+
+        /* Settings View */
+        .settings-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 10px;
+            border-bottom: 1px solid #1e293b;
+            font-size: 13px;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .nav-pill {
+            width: 80px;
+            height: 4px;
+            background: #64748b;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .nav-bar:active .nav-pill {
+            background: var(--primary-accent);
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Left Info Panel -->
+    <div class="info-panel">
+        <div class="badge">Team-of-BULLET-IT-Solutions</div>
+        <h1>Bullet-OS v1.0</h1>
+        <p class="tagline">A sleek, high-performance Linux-based Mobile Operating System (AOSP Core + Bullet Hardware Abstraction) engineered for pure speed and modern security.</p>
+        
+        <ul class="features-list">
+            <li><span class="bullet">▶</span> <strong>Native Android Compatibility:</strong> Full APK execution via ART runtime.</li>
+            <li><span class="bullet">▶</span> <strong>Bullet Performance Engine:</strong> C++ `bulletd` daemon for dynamic CPU governor management.</li>
+            <li><span class="bullet">▶</span> <strong>Generic System Image (GSI):</strong> Flashable on any Project Treble Android device.</li>
+            <li><span class="bullet">▶</span> <strong>PC Emulator / QEMU:</strong> Test on x86_64 machines with zero hardware lock-in.</li>
+            <li><span class="bullet">▶</span> <strong>Bullet Shield:</strong> Strict hardware isolation and privacy controls.</li>
+        </ul>
+
+        <p style="font-size: 12px; color: #64748b;">
+            💡 <em>Click any app on the phone screen to interact. Click the top status bar to pull down Quick Settings!</em>
+        </p>
+    </div>
+
+    <!-- Phone Simulator -->
+    <div class="phone-frame">
+        <div class="notch"></div>
+        <div class="phone-screen">
+            <!-- Status Bar -->
+            <div class="status-bar" id="statusBar" onclick="toggleQuickSettings()">
+                <span id="statusClock">12:00</span>
+                <div class="icons">
+                    <span>5G</span>
+                    <span>📶</span>
+                    <span>⚡ 98%</span>
+                </div>
+            </div>
+
+            <!-- Quick Settings Shade -->
+            <div class="qs-shade" id="qsShade">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <span style="font-size:14px; font-weight:700;">Quick Settings</span>
+                    <button onclick="toggleQuickSettings()" style="background:none; border:none; color:#fff; font-size:16px; cursor:pointer;">✕</button>
+                </div>
+                <div class="qs-grid">
+                    <div class="qs-tile active" onclick="this.classList.toggle('active')">
+                        <span class="tile-icon">⚡</span>
+                        <div>
+                            <div class="tile-title">Bullet Boost</div>
+                            <div class="tile-sub">Performance</div>
+                        </div>
+                    </div>
+                    <div class="qs-tile active" onclick="this.classList.toggle('active')">
+                        <span class="tile-icon">🛡️</span>
+                        <div>
+                            <div class="tile-title">Bullet Shield</div>
+                            <div class="tile-sub">Hardened</div>
+                        </div>
+                    </div>
+                    <div class="qs-tile active" onclick="this.classList.toggle('active')">
+                        <span class="tile-icon">📶</span>
+                        <div>
+                            <div class="tile-title">Wi-Fi 6E</div>
+                            <div class="tile-sub">Connected</div>
+                        </div>
+                    </div>
+                    <div class="qs-tile" onclick="this.classList.toggle('active')">
+                        <span class="tile-icon">✈️</span>
+                        <div>
+                            <div class="tile-title">Airplane</div>
+                            <div class="tile-sub">Off</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top:20px; font-size:11px; color:#94a3b8; text-align:center;">
+                    Swipe up or tap ✕ to close shade
+                </div>
+            </div>
+
+            <!-- Screen Viewport -->
+            <div class="screen-content">
+                <!-- Home Screen -->
+                <div class="view-home" id="viewHome">
+                    <div class="widget-clock">
+                        <div class="widget-time" id="homeClock">12:00</div>
+                        <div class="widget-date" id="homeDate">Thursday, Oct 22 • 28°C</div>
+                        <div class="perf-bar">
+                            <span>Bullet CPU Governor</span>
+                            <div class="perf-track"><div class="perf-fill"></div></div>
+                            <span style="color:#00f0ff;">schedutil</span>
+                        </div>
+                    </div>
+
+                    <!-- App Grid -->
+                    <div class="app-grid">
+                        <div class="app-icon-wrap" onclick="openApp('appTerminal')">
+                            <div class="app-icon" style="background:#0a192f; border-color:#00f0ff;">💻</div>
+                            <div class="app-name">Terminal</div>
+                        </div>
+                        <div class="app-icon-wrap" onclick="openApp('appSettings')">
+                            <div class="app-icon" style="background:#1e1b4b; border-color:#818cf8;">⚡</div>
+                            <div class="app-name">Bullet Lab</div>
+                        </div>
+                        <div class="app-icon-wrap" onclick="openApp('appDialer')">
+                            <div class="app-icon" style="background:#064e3b; border-color:#10b981;">📞</div>
+                            <div class="app-name">Phone</div>
+                        </div>
+                        <div class="app-icon-wrap" onclick="openApp('appFiles')">
+                            <div class="app-icon" style="background:#451a03; border-color:#f97316;">📁</div>
+                            <div class="app-name">Files</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terminal App -->
+                <div class="app-window" id="appTerminal">
+                    <div class="app-header">
+                        <h3>Bullet Linux Shell</h3>
+                        <button class="close-btn" onclick="closeApp('appTerminal')">✕</button>
+                    </div>
+                    <div class="terminal-box">
+                        <div class="terminal-history" id="termHistory">Bullet-OS Linux 6.1-bullet #1 SMP PREEMPT
+Type 'help', 'neofetch', 'uname', 'ps', or 'bulletd'
+root@bullet-os:/# </div>
+                        <div class="terminal-input-row">
+                            <span>$</span>
+                            <input type="text" class="terminal-input" id="termInput" autofocus placeholder="command..." onkeydown="handleTerm(event)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings / Bullet Lab App -->
+                <div class="app-window" id="appSettings">
+                    <div class="app-header">
+                        <h3>⚡ Bullet Lab Settings</h3>
+                        <button class="close-btn" onclick="closeApp('appSettings')">✕</button>
+                    </div>
+                    <div style="overflow-y:auto; flex:1;">
+                        <div class="settings-item">
+                            <div>
+                                <div style="font-weight:600; color:#fff;">Bullet Boost Mode</div>
+                                <div style="font-size:11px; color:#94a3b8;">Max clock speeds for gaming</div>
+                            </div>
+                            <input type="checkbox" checked>
+                        </div>
+                        <div class="settings-item">
+                            <div>
+                                <div style="font-weight:600; color:#fff;">Bullet Shield</div>
+                                <div style="font-size:11px; color:#94a3b8;">Block background mic/camera access</div>
+                            </div>
+                            <input type="checkbox" checked>
+                        </div>
+                        <div class="settings-item">
+                            <div>
+                                <div style="font-weight:600; color:#fff;">Display Refresh Rate</div>
+                                <div style="font-size:11px; color:#94a3b8;">Peak 120Hz dynamic refresh</div>
+                            </div>
+                            <span style="color:#00f0ff; font-weight:bold;">120 Hz</span>
+                        </div>
+                        <div style="margin-top:20px; background:#111827; border-radius:12px; padding:14px; font-size:12px;">
+                            <div style="color:#00f0ff; font-weight:700; margin-bottom:6px;">Device Information</div>
+                            <div style="color:#cbd5e1; line-height:1.6;">
+                                OS: <strong>Bullet-OS 1.0 (Kinetic)</strong><br>
+                                Base: <strong>AOSP Android 14 (API 34)</strong><br>
+                                Kernel: <strong>Linux 6.1.75-bullet-arm64</strong><br>
+                                Builder: <strong>BULLET IT Solutions</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dialer App -->
+                <div class="app-window" id="appDialer">
+                    <div class="app-header">
+                        <h3>Phone</h3>
+                        <button class="close-btn" onclick="closeApp('appDialer')">✕</button>
+                    </div>
+                    <div style="text-align:center; font-size:28px; margin:20px 0; color:#00f0ff; height:36px;" id="dialDisplay"></div>
+                    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; max-width:240px; margin:auto;">
+                        <button onclick="dialNum('1')" style="padding:14px; background:#1e293b; border:none; color:#fff; border-radius:50%; font-size:18px;">1</button>
+                        <button onclick="dialNum('2')" style="padding:14px; background:#1e293b; border:none; color:#fff; border-radius:50%; font-size:18px;">2</button>
+                        <button onclick="dialNum('3')" style="padding:14px; background:#1e293b; border:none; color:#fff; border-radius:50%; font-size:18px;">3</button>
+                        <button onclick="dialNum('4')" style="padding:14px; background:#1e293b; border:none; color:#fff; border-radius:50%; font-size:18px;">4</button>
+                        <button onclick="dialNum('5')" style="padding:14px; background:#1e293b; border:none; color:#fff; border-radius:50%; font-size:18px;">5</button>
+                        <button onclick="dialNum('6')" style="padding:14px; background:#1e293b; border:none; color:#fff; border-radius:50%; font-size:18px;">6</button>
+                        <button onclick="dialNum('7')" style="padding:14px; background:#1e293b; border:none; color:#fff; border-radius:50%; font-size:18px;">7</button>
+                        <button onclick="dialNum('8')" style="padding:14px; background:#1e293b; border:none; color:#fff; border-radius:50%; font-size:18px;">8</button>
+                        <button onclick="dialNum('9')" style="padding:14px; background:#1e293b; border:none; color:#fff; border-radius:50%; font-size:18px;">9</button>
+                        <button onclick="dialNum('*')" style="padding:14px; background:#1e293b; border:none; color:#fff; border-radius:50%; font-size:18px;">*</button>
+                        <button onclick="dialNum('0')" style="padding:14px; background:#1e293b; border:none; color:#fff; border-radius:50%; font-size:18px;">0</button>
+                        <button onclick="dialNum('#')" style="padding:14px; background:#1e293b; border:none; color:#fff; border-radius:50%; font-size:18px;">#</button>
+                    </div>
+                </div>
+
+                <!-- Files App -->
+                <div class="app-window" id="appFiles">
+                    <div class="app-header">
+                        <h3>Bullet File Explorer</h3>
+                        <button class="close-btn" onclick="closeApp('appFiles')">✕</button>
+                    </div>
+                    <div style="font-size:13px; color:#cbd5e1;">
+                        <div style="padding:10px; border-bottom:1px solid #1e293b;">📁 /system (Bullet-OS Read-Only)</div>
+                        <div style="padding:10px; border-bottom:1px solid #1e293b;">📁 /vendor (HAL Drivers)</div>
+                        <div style="padding:10px; border-bottom:1px solid #1e293b;">📁 /data (User Data & Apps)</div>
+                        <div style="padding:10px; border-bottom:1px solid #1e293b;">📁 /sdcard/Download</div>
+                        <div style="padding:10px; border-bottom:1px solid #1e293b;">📄 /system/build.prop</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Home Gesture Bar -->
+            <div class="nav-bar" onclick="goHome()">
+                <div class="nav-pill"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updateClock() {
+        const now = new Date();
+        const hrs = String(now.getHours()).padStart(2, '0');
+        const mins = String(now.getMinutes()).padStart(2, '0');
+        document.getElementById('statusClock').innerText = `${hrs}:${mins}`;
+        document.getElementById('homeClock').innerText = `${hrs}:${mins}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    function toggleQuickSettings() {
+        const qs = document.getElementById('qsShade');
+        qs.classList.toggle('open');
+    }
+
+    function openApp(id) {
+        document.getElementById(id).classList.add('active');
+    }
+
+    function closeApp(id) {
+        document.getElementById(id).classList.remove('active');
+    }
+
+    function goHome() {
+        document.querySelectorAll('.app-window').forEach(el => el.classList.remove('active'));
+        document.getElementById('qsShade').classList.remove('open');
+    }
+
+    function dialNum(n) {
+        const disp = document.getElementById('dialDisplay');
+        disp.innerText += n;
+    }
+
+    function handleTerm(e) {
+        if (e.key === 'Enter') {
+            const input = document.getElementById('termInput');
+            const history = document.getElementById('termHistory');
+            const cmd = input.value.trim();
+            input.value = '';
+
+            let response = '';
+            if (cmd === 'help') {
+                response = 'Available commands: neofetch, uname, ps, bulletd, clear, date, uptime, whoami';
+            } else if (cmd === 'neofetch') {
+                response = 
+`  ____        _ _      _   
+ | __ ) _   _| | | ___| |_ 
+ |  _ \\| | | | | |/ _ \\ __|
+ | |_) | |_| | | |  __/ |_ 
+ |____/ \\__,_|_|_|\\___|\\__|
+OS: Bullet-OS 1.0 Kinetic (Android 14)
+Host: Generic ARM64 Treble Board
+Kernel: 6.1.75-bullet-arm64
+Uptime: 4 days, 12 hours
+Shell: /system/bin/sh
+CPU: 8-Core ARMv8 Kryo
+Memory: 2140MB / 8192MB (zRAM lz4)`;
+            } else if (cmd === 'uname' || cmd === 'uname -a') {
+                response = 'Linux bullet-os 6.1.75-bullet-arm64 #1 SMP PREEMPT 2026 aarch64 GNU/Linux';
+            } else if (cmd === 'bulletd') {
+                response = 'bulletd: IPC active at /dev/socket/bulletd | Current Governor: SCHEDUTIL (Balanced)';
+            } else if (cmd === 'ps') {
+                response = 
+`PID  USER     COMMAND
+  1  root     init
+  2  root     [kthreadd]
+412  system   system_server
+530  root     bulletd
+890  u0_a42   org.bulletos.launcher`;
+            } else if (cmd === 'clear') {
+                history.innerText = 'root@bullet-os:/# ';
+                return;
+            } else if (cmd === 'date') {
+                response = new Date().toUTCString();
+            } else if (cmd === 'whoami') {
+                response = 'root (uid=0 gid=0)';
+            } else if (cmd === 'uptime') {
+                response = 'up 4 days, 12:34, load average: 0.12, 0.08, 0.05';
+            } else if (cmd.length > 0) {
+                response = `sh: command not found: ${cmd}`;
+            }
+
+            history.innerText += `${cmd}\n${response}\nroot@bullet-os:/# `;
+            history.scrollTop = history.scrollHeight;
+        }
+    }
+</script>
+
+</body>
+</html>

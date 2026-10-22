@@ -1,0 +1,40 @@
+name: Bullet-OS Validation & CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Linting & Verification Tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxml2-utils
+          pip install Pillow
+
+      - name: Validate Manifest XML Schemas
+        run: |
+          xmllint --noout manifest/default.xml
+          xmllint --noout manifest/bullet.xml
+
+      - name: Validate Android Overlays
+        run: |
+          xmllint --noout vendor/bullet/overlay/common/frameworks/base/core/res/res/values/config.xml
+          xmllint --noout vendor/bullet/overlay/common/frameworks/base/packages/SystemUI/res/values/colors.xml
+
+      - name: Test Bootanimation Generator
+        run: |
+          python build/tools/generate_bootanimation.py
+          test -f vendor/bullet/bootanimation/bootanimation.zip
