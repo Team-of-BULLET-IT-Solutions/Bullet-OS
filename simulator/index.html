@@ -3,51 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bullet-OS | iOS Fluid Edition | BULLET IT Solutions</title>
+    <title>Bullet-OS | AquaFlow Edition | BULLET IT Solutions</title>
     <style>
         :root {
-            --ios-bg: #000000;
-            --ios-card-glass: rgba(30, 30, 36, 0.72);
-            --ios-card-border: rgba(255, 255, 255, 0.12);
-            --ios-text: #ffffff;
-            --ios-text-sub: #8e8e93;
-            --ios-blue: #007aff;
-            --ios-green: #34c759;
-            --ios-orange: #ff9500;
-            --ios-red: #ff3b30;
-            --ios-purple: #af52de;
-            --ios-cyan: #00f0ff;
-            --ios-yellow: #ffcc00;
-            --ios-group-bg: #1c1c1e;
-            --ios-separator: rgba(84, 84, 88, 0.45);
-            --squircle-radius: 22.5%;
+            --bullet-bg: #070a13;
+            --bullet-surface: #0e1424;
+            --bullet-card-glass: rgba(18, 26, 43, 0.75);
+            --bullet-card-border: rgba(255, 255, 255, 0.09);
+            --bullet-text: #ffffff;
+            --bullet-text-sub: #94a3b8;
+            --bullet-aqua: #00f0ff;
+            --bullet-ocean: #0066ff;
+            --bullet-emerald: #00c48c;
+            --bullet-amber: #ff9500;
+            --bullet-coral: #ff5252;
+            --bullet-purple: #8b5cf6;
+            --bullet-group-bg: rgba(24, 34, 56, 0.82);
+            --bullet-separator: rgba(255, 255, 255, 0.08);
+            --squircle-radius: 24%;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Roboto, sans-serif;
+            font-family: "Segoe UI", Roboto, "Inter", "Helvetica Neue", Arial, sans-serif;
             user-select: none;
             -webkit-font-smoothing: antialiased;
         }
 
         body {
-            background: radial-gradient(circle at 10% 20%, #0c1222 0%, #030712 50%, #000000 100%);
+            background: radial-gradient(circle at 10% 20%, #0c182c 0%, #060b17 50%, #02050b 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--ios-text);
+            color: var(--bullet-text);
             overflow-x: hidden;
             padding: 24px;
         }
 
         .showcase-wrapper {
             display: flex;
-            gap: 60px;
+            gap: 55px;
             align-items: center;
-            max-width: 1350px;
+            max-width: 1380px;
             width: 100%;
             justify-content: center;
             flex-wrap: wrap;
@@ -55,36 +55,36 @@
 
         /* Information Column */
         .brand-column {
-            max-width: 480px;
+            max-width: 500px;
         }
 
         .bullet-brand-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(0, 240, 255, 0.1);
-            border: 1px solid rgba(0, 240, 255, 0.3);
-            padding: 6px 16px;
+            background: rgba(0, 240, 255, 0.12);
+            border: 1px solid rgba(0, 240, 255, 0.35);
+            padding: 7px 18px;
             border-radius: 30px;
             font-size: 13px;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 20px rgba(0, 240, 255, 0.15);
+            margin-bottom: 22px;
+            box-shadow: 0 4px 25px rgba(0, 240, 255, 0.18);
         }
 
         .bullet-brand-badge span.logo {
-            color: var(--ios-cyan);
+            color: var(--bullet-aqua);
             font-size: 16px;
         }
 
         h1 {
             font-size: 46px;
             font-weight: 800;
-            letter-spacing: -1.5px;
-            line-height: 1.1;
+            letter-spacing: -1.2px;
+            line-height: 1.15;
             margin-bottom: 16px;
-            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #38bdf8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -93,15 +93,15 @@
             color: #94a3b8;
             font-size: 16px;
             line-height: 1.6;
-            margin-bottom: 28px;
+            margin-bottom: 26px;
         }
 
         .feature-bullets {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 14px;
-            margin-bottom: 30px;
+            gap: 13px;
+            margin-bottom: 28px;
         }
 
         .feature-bullets li {
@@ -110,31 +110,32 @@
             gap: 12px;
             font-size: 14px;
             color: #e2e8f0;
-            line-height: 1.4;
+            line-height: 1.45;
         }
 
         .feature-bullets .bullet-icon {
-            width: 28px;
-            height: 28px;
-            border-radius: 8px;
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
             background: rgba(0, 240, 255, 0.12);
-            color: var(--ios-cyan);
+            color: var(--bullet-aqua);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+            font-size: 15px;
             flex-shrink: 0;
-            border: 1px solid rgba(0, 240, 255, 0.25);
+            border: 1px solid rgba(0, 240, 255, 0.28);
         }
 
         .interaction-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 18px;
+            background: rgba(18, 26, 43, 0.6);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 20px;
             padding: 16px 20px;
-            font-size: 12px;
+            font-size: 12.5px;
             color: #94a3b8;
             line-height: 1.6;
+            backdrop-filter: blur(20px);
         }
 
         .interaction-card strong {
@@ -142,77 +143,110 @@
         }
 
         /* ========================================================
-           iPhone 16 Pro Style Hardware Chassis
+           Flagship Curved Smartphone Hardware Chassis
         ======================================================== */
         .device-chassis {
-            width: 395px;
-            height: 805px;
-            background: #1c1d24;
-            border-radius: 56px;
-            padding: 12px;
+            width: 398px;
+            height: 818px;
+            background: linear-gradient(145deg, #182030, #0a0e18);
+            border-radius: 54px;
+            padding: 10px;
             box-shadow: 
-                0 0 0 1px rgba(255, 255, 255, 0.16),
-                0 30px 70px -10px rgba(0, 0, 0, 0.95),
-                0 0 70px rgba(0, 240, 255, 0.18),
-                inset 0 0 4px 2px rgba(255, 255, 255, 0.1);
+                0 0 0 1.5px rgba(255, 255, 255, 0.14),
+                0 30px 80px -15px rgba(0, 0, 0, 0.95),
+                0 0 70px rgba(0, 240, 255, 0.16),
+                inset 0 0 6px 2px rgba(255, 255, 255, 0.08);
             position: relative;
         }
 
-        /* Curved OLED Display */
+        /* Side Hardware Keys */
+        .device-chassis::before {
+            content: '';
+            position: absolute;
+            left: -4px;
+            top: 150px;
+            width: 4px;
+            height: 80px;
+            background: #25334d;
+            border-radius: 4px 0 0 4px;
+            box-shadow: inset 0 0 2px rgba(0, 240, 255, 0.3);
+        }
+
+        .device-chassis::after {
+            content: '';
+            position: absolute;
+            right: -4px;
+            top: 180px;
+            width: 4px;
+            height: 52px;
+            background: #00f0ff;
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 0 8px rgba(0, 240, 255, 0.7);
+        }
+
+        /* Screen Display */
         .screen-container {
             width: 100%;
             height: 100%;
             border-radius: 46px;
             overflow: hidden;
             position: relative;
-            /* iOS 18 Chromatic Gradient Wallpaper */
+            /* Aquamorphic Vibrant Flow Wallpaper */
             background: 
-                radial-gradient(circle at 85% 15%, rgba(255, 45, 85, 0.5) 0%, transparent 45%),
-                radial-gradient(circle at 15% 35%, rgba(0, 122, 255, 0.6) 0%, transparent 50%),
-                radial-gradient(circle at 80% 75%, rgba(175, 82, 222, 0.55) 0%, transparent 55%),
-                radial-gradient(circle at 20% 90%, rgba(0, 240, 255, 0.35) 0%, transparent 45%),
-                #060812;
+                radial-gradient(circle at 85% 15%, rgba(0, 240, 255, 0.45) 0%, transparent 45%),
+                radial-gradient(circle at 15% 35%, rgba(0, 102, 255, 0.55) 0%, transparent 50%),
+                radial-gradient(circle at 80% 75%, rgba(0, 196, 140, 0.4) 0%, transparent 55%),
+                radial-gradient(circle at 20% 90%, rgba(139, 92, 246, 0.4) 0%, transparent 45%),
+                #070a13;
             background-size: cover;
             display: flex;
             flex-direction: column;
-            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Punch-hole Front Camera */
+        .punch-hole-camera {
+            position: absolute;
+            top: 13px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #18263e, #020409);
+            box-shadow: 0 0 2px rgba(0,0,0,0.9), inset 0 0 2px rgba(0, 240, 255, 0.6);
+            z-index: 1001;
+            pointer-events: none;
         }
 
         /* ========================================================
-           Bullet Island (Dynamic Island Implementation)
+           Bullet Capsule (Fluid Cloud Dynamic Island)
         ======================================================== */
-        .island-anchor {
+        .capsule-anchor {
             position: absolute;
-            top: 10px;
+            top: 8px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
         }
 
-        .bullet-island {
-            width: 124px;
+        .bullet-capsule {
+            width: 130px;
             height: 32px;
-            background: #000000;
+            background: rgba(10, 15, 26, 0.94);
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 12px;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.9), 0 0 0 0.5px rgba(255,255,255,0.08);
+            transition: all 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85), 0 0 0 0.8px rgba(0, 240, 255, 0.25);
             overflow: hidden;
+            backdrop-filter: blur(25px);
         }
 
-        .island-camera {
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-            background: radial-gradient(circle at 35% 35%, #182236, #000);
-            box-shadow: inset 0 0 2px rgba(0, 240, 255, 0.6);
-        }
-
-        .island-compact {
+        .capsule-compact {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -221,31 +255,32 @@
             color: #fff;
         }
 
-        .island-expanded {
+        .capsule-expanded {
             display: none;
             width: 100%;
             height: 100%;
             flex-direction: column;
-            padding: 12px;
+            padding: 12px 14px;
             justify-content: space-between;
         }
 
-        /* Expanded State */
-        .bullet-island.expanded {
-            width: 340px;
-            height: 165px;
-            border-radius: 38px;
-            background: rgba(0, 0, 0, 0.95);
+        /* Expanded Capsule State */
+        .bullet-capsule.expanded {
+            width: 346px;
+            height: 168px;
+            border-radius: 32px;
+            background: rgba(12, 18, 32, 0.96);
             backdrop-filter: blur(40px);
-            padding: 16px;
-            border: 1px solid rgba(255,255,255,0.12);
+            padding: 14px;
+            border: 1px solid rgba(0, 240, 255, 0.35);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 240, 255, 0.2);
         }
 
-        .bullet-island.expanded .island-compact {
+        .bullet-capsule.expanded .capsule-compact {
             display: none;
         }
 
-        .bullet-island.expanded .island-expanded {
+        .bullet-capsule.expanded .capsule-expanded {
             display: flex;
         }
 
@@ -258,7 +293,7 @@
 
         .audio-bars span {
             width: 2.5px;
-            background: var(--ios-cyan);
+            background: var(--bullet-aqua);
             border-radius: 2px;
             animation: barPulse 1s ease-in-out infinite;
         }
@@ -273,15 +308,15 @@
         }
 
         /* ========================================================
-           iOS Status Bar
+           Bullet Status Bar
         ======================================================== */
-        .ios-top-bar {
+        .bullet-top-bar {
             height: 48px;
-            padding: 12px 28px 0 28px;
+            padding: 12px 24px 0 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 13px;
+            font-size: 13.5px;
             font-weight: 600;
             color: #ffffff;
             z-index: 100;
@@ -292,66 +327,60 @@
             cursor: pointer;
             padding: 2px 6px;
             border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .status-right {
             display: flex;
             align-items: center;
-            gap: 7px;
+            gap: 8px;
             cursor: pointer;
             padding: 2px 6px;
             border-radius: 6px;
         }
 
         .carrier-tag {
-            font-size: 10px;
-            font-weight: 700;
-            color: var(--ios-cyan);
-            letter-spacing: 0.5px;
-            margin-right: 2px;
+            font-size: 10.5px;
+            font-weight: 800;
+            color: var(--bullet-aqua);
+            letter-spacing: 0.6px;
         }
 
-        .battery-badge {
-            width: 25px;
-            height: 12px;
-            border: 1.5px solid rgba(255, 255, 255, 0.85);
-            border-radius: 4px;
-            padding: 1.5px;
-            position: relative;
+        .battery-capsule {
             display: flex;
             align-items: center;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 2px 6px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 11px;
+            font-weight: 700;
+            color: #fff;
         }
 
-        .battery-badge::after {
-            content: '';
-            position: absolute;
-            right: -3.5px;
-            top: 3px;
-            width: 2px;
-            height: 4.5px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 0 1px 1px 0;
-        }
-
-        .battery-level {
-            height: 100%;
-            width: 98%;
-            background: #ffffff;
-            border-radius: 1.5px;
+        .battery-capsule-fill {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--bullet-emerald);
+            box-shadow: 0 0 6px var(--bullet-emerald);
         }
 
         /* ========================================================
-           iOS Lock Screen Drawer
+           Bullet Notification / Lock Drawer
         ======================================================== */
-        .ios-lock-drawer {
+        .bullet-lock-drawer {
             position: absolute;
             top: -100%;
             left: 0;
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 50% 20%, rgba(0, 122, 255, 0.45) 0%, transparent 60%),
-                rgba(6, 8, 16, 0.88);
+                radial-gradient(circle at 50% 20%, rgba(0, 240, 255, 0.3) 0%, transparent 60%),
+                rgba(7, 10, 19, 0.92);
             backdrop-filter: blur(45px);
             -webkit-backdrop-filter: blur(45px);
             z-index: 800;
@@ -359,10 +388,10 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 60px 24px 30px 24px;
+            padding: 60px 22px 30px 22px;
         }
 
-        .ios-lock-drawer.active {
+        .bullet-lock-drawer.active {
             top: 0;
         }
 
@@ -372,85 +401,87 @@
 
         .lock-carrier-header {
             font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: var(--ios-cyan);
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            color: var(--bullet-aqua);
             margin-bottom: 6px;
             text-transform: uppercase;
         }
 
         .lock-date-str {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 500;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.85);
             margin-bottom: 4px;
         }
 
         .lock-clock-large {
-            font-size: 78px;
+            font-size: 82px;
             font-weight: 700;
             letter-spacing: -2px;
             line-height: 1;
             color: #ffffff;
-            text-shadow: 0 4px 24px rgba(0,0,0,0.45);
+            text-shadow: 0 6px 30px rgba(0, 240, 255, 0.3);
         }
 
         .lock-notifs {
             flex: 1;
-            margin-top: 40px;
+            margin-top: 35px;
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
 
-        .glass-notification {
-            background: rgba(255, 255, 255, 0.12);
+        .aquamorphic-notification {
+            background: rgba(18, 26, 44, 0.75);
             backdrop-filter: blur(30px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
+            border: 1px solid rgba(0, 240, 255, 0.22);
+            border-radius: 22px;
             padding: 14px 16px;
             display: flex;
-            gap: 12px;
+            gap: 14px;
             align-items: center;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 28px rgba(0,0,0,0.4);
         }
 
         .notif-badge-icon {
-            width: 38px;
-            height: 38px;
-            border-radius: 9px;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 20px;
             flex-shrink: 0;
+            background: linear-gradient(135deg, #00f0ff, #0066ff);
+            color: #000;
         }
 
         .notif-text-title {
             font-size: 13px;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
         }
 
         .notif-text-body {
             font-size: 12px;
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.3;
+            color: #cbd5e1;
+            line-height: 1.35;
         }
 
         .lock-actions-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 10px;
+            padding: 0 12px;
         }
 
         .circle-action-btn {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.14);
             backdrop-filter: blur(25px);
             display: flex;
             align-items: center;
@@ -464,198 +495,282 @@
 
         .circle-action-btn:active {
             transform: scale(0.92);
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(0, 240, 255, 0.35);
         }
 
         /* ========================================================
-           iOS Control Center Drawer
+           Bullet Quick Center (Dual Tile Header & Fluid Sliders)
         ======================================================== */
-        .ios-cc-drawer {
+        .bullet-qc-drawer {
             position: absolute;
             top: -100%;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 17, 26, 0.82);
-            backdrop-filter: blur(45px);
-            -webkit-backdrop-filter: blur(45px);
+            background: rgba(9, 13, 24, 0.88);
+            backdrop-filter: blur(48px);
+            -webkit-backdrop-filter: blur(48px);
             z-index: 900;
             transition: top 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            padding: 54px 18px 24px 18px;
+            padding: 52px 18px 22px 18px;
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 13px;
+            overflow-y: auto;
         }
 
-        .ios-cc-drawer.active {
+        .bullet-qc-drawer.active {
             top: 0;
         }
 
-        .cc-top-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
+        /* Top Bar of Quick Center */
+        .qc-header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 4px;
         }
 
-        .cc-network-pod {
-            background: var(--ios-card-glass);
-            border-radius: 24px;
-            padding: 12px;
+        .qc-header-title {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--bullet-aqua);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Bullet AquaFlow Prominent Dual Pill Tiles */
+        .qc-dual-pill-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
-            backdrop-filter: blur(25px);
-            border: 1px solid var(--ios-card-border);
         }
 
-        .net-circle-btn {
-            width: 52px;
-            height: 52px;
+        .qc-pill-card {
+            background: var(--bullet-card-glass);
+            border-radius: 24px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid var(--bullet-card-border);
+            cursor: pointer;
+            transition: all 0.22s;
+        }
+
+        .qc-pill-card.active {
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.28), rgba(0, 102, 255, 0.32));
+            border-color: rgba(0, 240, 255, 0.5);
+            box-shadow: 0 4px 20px rgba(0, 240, 255, 0.2);
+        }
+
+        .qc-pill-icon {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.12);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 22px;
-            cursor: pointer;
-            transition: all 0.2s;
-            margin: auto;
+            font-size: 18px;
+            flex-shrink: 0;
+            transition: background 0.2s, color 0.2s;
         }
 
-        .net-circle-btn.active.blue {
-            background: var(--ios-blue);
-            color: #fff;
-            box-shadow: 0 0 15px rgba(0, 122, 255, 0.5);
-        }
-
-        .net-circle-btn.active.green {
-            background: var(--ios-green);
-            color: #fff;
-            box-shadow: 0 0 15px rgba(52, 199, 89, 0.5);
-        }
-
-        .net-circle-btn.active.orange {
-            background: var(--ios-orange);
-            color: #fff;
-            box-shadow: 0 0 15px rgba(255, 149, 0, 0.5);
-        }
-
-        .cc-media-pod {
-            background: var(--ios-card-glass);
-            border-radius: 24px;
-            padding: 14px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border: 1px solid var(--ios-card-border);
-        }
-
-        .media-track-name {
-            font-size: 13px;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .media-artist-name {
-            font-size: 11px;
-            color: var(--ios-text-sub);
-        }
-
-        .media-btns-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 18px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .cc-vertical-sliders-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 14px;
-            height: 140px;
-        }
-
-        .cc-tile-btn {
-            background: var(--ios-card-glass);
-            height: 100%;
-            border-radius: 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-            font-size: 22px;
-            border: 1px solid var(--ios-card-border);
-            cursor: pointer;
-            transition: background 0.2s, transform 0.15s;
-        }
-
-        .cc-tile-btn.active {
-            background: #ffffff;
+        .qc-pill-card.active .qc-pill-icon {
+            background: var(--bullet-aqua);
             color: #000;
+            box-shadow: 0 0 12px var(--bullet-aqua);
         }
 
-        .cc-tile-label {
-            font-size: 10px;
-            font-weight: 600;
-        }
-
-        .vertical-slider-track {
-            background: var(--ios-card-glass);
-            border-radius: 24px;
-            position: relative;
+        .qc-pill-info {
+            display: flex;
+            flex-direction: column;
             overflow: hidden;
-            border: 1px solid var(--ios-card-border);
-            display: flex;
-            flex-direction: column-reverse;
-            cursor: pointer;
         }
 
-        .vertical-slider-fill {
-            background: #ffffff;
-            width: 100%;
-            transition: height 0.15s;
+        .qc-pill-name {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #ffffff;
+            white-space: nowrap;
         }
 
-        .vertical-slider-icon {
-            position: absolute;
-            bottom: 14px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 22px;
-            color: #000;
-            z-index: 2;
-            pointer-events: none;
+        .qc-pill-sub {
+            font-size: 11px;
+            color: var(--bullet-text-sub);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .cc-bottom-actions-grid {
+        /* Circular / Squircle Quick Toggles Grid (4 columns) */
+        .qc-toggles-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 14px;
+            gap: 12px;
         }
 
-        .cc-action-sq {
-            background: var(--ios-card-glass);
-            height: 70px;
+        .qc-toggle-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .qc-circle-btn {
+            width: 54px;
+            height: 54px;
             border-radius: 20px;
+            background: var(--bullet-card-glass);
+            border: 1px solid var(--bullet-card-border);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            border: 1px solid var(--ios-card-border);
-            cursor: pointer;
+            font-size: 21px;
             transition: all 0.2s;
+            color: #fff;
         }
 
-        .cc-action-sq.active {
-            background: #ffffff;
+        .qc-circle-btn.active {
+            background: linear-gradient(135deg, #00f0ff, #0066ff);
             color: #000;
+            border-color: #00f0ff;
+            box-shadow: 0 0 16px rgba(0, 240, 255, 0.45);
+        }
+
+        .qc-toggle-label {
+            font-size: 11px;
+            color: #cbd5e1;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Horizontal Brightness & Volume Sliders (Bullet AquaFlow Style) */
+        .qc-sliders-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .horizontal-slider-card {
+            background: var(--bullet-card-glass);
+            border-radius: 24px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            border: 1px solid var(--bullet-card-border);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            height: 52px;
+        }
+
+        .horizontal-slider-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(0, 240, 255, 0.35), rgba(0, 102, 255, 0.4));
+            z-index: 1;
+            border-right: 2px solid var(--bullet-aqua);
+            transition: width 0.15s;
+        }
+
+        .horizontal-slider-icon {
+            font-size: 18px;
+            z-index: 2;
+            color: #fff;
+        }
+
+        .horizontal-slider-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .horizontal-slider-percent {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--bullet-aqua);
+            z-index: 2;
+        }
+
+        /* Media Player Card in Quick Center */
+        .qc-media-card {
+            background: var(--bullet-card-glass);
+            border-radius: 24px;
+            padding: 14px 16px;
+            border: 1px solid var(--bullet-card-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+        }
+
+        .qc-media-thumb {
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #00f0ff, #0066ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #000;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 240, 255, 0.35);
+        }
+
+        .qc-media-meta {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .qc-media-title {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .qc-media-sub {
+            font-size: 11px;
+            color: var(--bullet-text-sub);
+        }
+
+        .qc-media-controls {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 19px;
+            cursor: pointer;
+        }
+
+        /* One-Tap RAM Cleaner Banner */
+        .qc-clean-banner {
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px dashed rgba(0, 240, 255, 0.35);
+            border-radius: 18px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #e2e8f0;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .qc-clean-banner:hover {
+            background: rgba(0, 240, 255, 0.18);
         }
 
         /* ========================================================
-           iOS Home Screen
+           Bullet Home Screen Desktop
         ======================================================== */
         .viewport-space {
             flex: 1;
@@ -670,79 +785,82 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            padding: 12px 20px 14px 20px;
+            padding: 10px 18px 12px 18px;
             justify-content: space-between;
         }
 
-        /* iOS 2x2 Widgets Row */
-        .ios-widgets-deck {
+        /* Aquamorphic Smart Widgets (Shelf Style) */
+        .bullet-widgets-deck {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 14px;
+            gap: 12px;
             margin-top: 4px;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
-        .ios-card-widget {
-            background: var(--ios-card-glass);
+        .aquamorphic-widget {
+            background: var(--bullet-card-glass);
             backdrop-filter: blur(25px);
-            border: 1px solid var(--ios-card-border);
+            border: 1px solid var(--bullet-card-border);
             border-radius: 26px;
-            padding: 16px;
-            height: 140px;
+            padding: 14px 16px;
+            height: 142px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             cursor: pointer;
             transition: transform 0.2s;
         }
 
-        .ios-card-widget:active {
+        .aquamorphic-widget:active {
             transform: scale(0.97);
         }
 
         .weather-sub {
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 600;
-            color: #fff;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
 
         .weather-big-temp {
             font-size: 38px;
             font-weight: 700;
             color: #fff;
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
             line-height: 1;
         }
 
-        .battery-entry {
+        /* Health / Boost Radial Gauge */
+        .system-gauge-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            font-size: 12px;
-            font-weight: 600;
         }
 
-        .battery-ring-svg {
-            width: 38px;
-            height: 38px;
+        .system-gauge-radial {
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            border: 3px solid var(--ios-green);
+            border: 3.5px solid var(--bullet-aqua);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             font-size: 10px;
+            font-weight: 800;
             color: #fff;
-            font-weight: 700;
-            box-shadow: 0 0 10px rgba(52, 199, 89, 0.4);
+            box-shadow: 0 0 14px rgba(0, 240, 255, 0.45);
         }
 
-        /* iOS Apps Grid (4 columns) */
-        .ios-grid-apps {
+        /* Bullet Apps Grid (4 columns, Pebble Squircles) */
+        .bullet-grid-apps {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 18px 12px;
+            gap: 16px 10px;
             margin-bottom: auto;
         }
 
@@ -759,8 +877,8 @@
             transform: scale(0.88);
         }
 
-        /* Continuous Curvature Squircle */
-        .squircle-app-icon {
+        /* Pebble Squircle App Icon */
+        .pebble-app-icon {
             width: 58px;
             height: 58px;
             border-radius: var(--squircle-radius);
@@ -768,19 +886,20 @@
             align-items: center;
             justify-content: center;
             font-size: 28px;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
             position: relative;
             background-size: cover;
-            border: 0.5px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            transition: transform 0.15s;
         }
 
         .app-caption {
-            font-size: 11px;
+            font-size: 11.5px;
             color: #ffffff;
             font-weight: 500;
             text-align: center;
             letter-spacing: -0.1px;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.85);
         }
 
         .pagination-dots {
@@ -788,7 +907,7 @@
             align-items: center;
             justify-content: center;
             gap: 6px;
-            margin: 10px 0;
+            margin: 8px 0;
         }
 
         .dot-crumb {
@@ -799,44 +918,45 @@
         }
 
         .dot-crumb.active {
-            background: #ffffff;
-            width: 7px;
-            height: 7px;
+            background: var(--bullet-aqua);
+            width: 16px;
+            border-radius: 4px;
+            box-shadow: 0 0 8px var(--bullet-aqua);
         }
 
         /* ========================================================
-           iOS Floating Frosted Glass Dock
+           Bullet Bottom Floating Dock
         ======================================================== */
-        .ios-bottom-dock {
-            background: rgba(255, 255, 255, 0.22);
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
-            border-radius: 36px;
-            padding: 12px 18px;
+        .bullet-bottom-dock {
+            background: rgba(18, 26, 44, 0.72);
+            backdrop-filter: blur(35px);
+            -webkit-backdrop-filter: blur(35px);
+            border-radius: 32px;
+            padding: 10px 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.14);
         }
 
         /* ========================================================
-           iOS Application Windows
+           Bullet Application Windows
         ======================================================== */
-        .app-window-ios {
+        .app-window-bullet {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--ios-bg);
+            background: var(--bullet-bg);
             z-index: 500;
             display: none;
             flex-direction: column;
-            animation: appZoom 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: appZoom 0.32s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .app-window-ios.active {
+        .app-window-bullet.active {
             display: flex;
         }
 
@@ -845,48 +965,49 @@
             to { transform: scale(1); opacity: 1; }
         }
 
-        .ios-window-nav {
+        .bullet-window-nav {
             height: 52px;
             padding: 0 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 0.5px solid var(--ios-separator);
-            background: rgba(28, 28, 30, 0.85);
+            border-bottom: 0.5px solid var(--bullet-separator);
+            background: rgba(18, 26, 43, 0.88);
             backdrop-filter: blur(25px);
         }
 
-        .ios-window-title {
+        .bullet-window-title {
             font-size: 17px;
-            font-weight: 600;
+            font-weight: 700;
             color: #fff;
         }
 
         .nav-done-btn {
             background: none;
             border: none;
-            color: var(--ios-blue);
-            font-size: 16px;
-            font-weight: 600;
+            color: var(--bullet-aqua);
+            font-size: 15.5px;
+            font-weight: 700;
             cursor: pointer;
         }
 
         /* Settings View */
-        .ios-grouped-scroll {
+        .bullet-grouped-scroll {
             flex: 1;
             overflow-y: auto;
-            padding: 18px 16px;
-            background: #000000;
+            padding: 16px;
+            background: var(--bullet-bg);
         }
 
         .bullet-id-card {
-            background: var(--ios-group-bg);
-            border-radius: 14px;
-            padding: 14px 16px;
+            background: var(--bullet-group-bg);
+            border-radius: 20px;
+            padding: 16px;
             display: flex;
             align-items: center;
             gap: 14px;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
+            border: 1px solid var(--bullet-card-border);
             cursor: pointer;
         }
 
@@ -894,42 +1015,66 @@
             width: 52px;
             height: 52px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #00f0ff, #007aff);
+            background: linear-gradient(135deg, #00f0ff, #0066ff);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 24px;
             font-weight: 800;
             color: #000;
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+            box-shadow: 0 0 16px rgba(0, 240, 255, 0.5);
         }
 
-        .ios-section-group {
-            background: var(--ios-group-bg);
-            border-radius: 14px;
-            margin-bottom: 22px;
+        /* Bullet Hardware Specs Card */
+        .device-spec-card {
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(0, 102, 255, 0.22));
+            border: 1px solid rgba(0, 240, 255, 0.35);
+            border-radius: 20px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .spec-storage-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 3px;
             overflow: hidden;
+            margin: 8px 0;
+            display: flex;
         }
 
-        .ios-row-item {
-            padding: 12px 16px;
+        .spec-bar-used {
+            width: 38%;
+            background: var(--bullet-aqua);
+        }
+
+        .bullet-section-group {
+            background: var(--bullet-group-bg);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border: 1px solid var(--bullet-card-border);
+        }
+
+        .bullet-row-item {
+            padding: 14px 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 0.5px solid var(--ios-separator);
+            border-bottom: 0.5px solid var(--bullet-separator);
             font-size: 15px;
             color: #ffffff;
             cursor: pointer;
         }
 
-        .ios-row-item:last-child {
+        .bullet-row-item:last-child {
             border-bottom: none;
         }
 
         .row-icon-badge {
-            width: 30px;
-            height: 30px;
-            border-radius: 7px;
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -937,37 +1082,39 @@
             color: #fff;
         }
 
-        .ios-toggle {
-            width: 48px;
+        /* Aquamorphic Fluid Toggle Switch */
+        .bullet-toggle {
+            width: 50px;
             height: 28px;
-            background: #39393d;
+            background: #2a354d;
             border-radius: 16px;
             position: relative;
             cursor: pointer;
             transition: background 0.25s;
         }
 
-        .ios-toggle.on {
-            background: var(--ios-green);
+        .bullet-toggle.on {
+            background: linear-gradient(90deg, #00f0ff, #0066ff);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
         }
 
-        .ios-toggle-ball {
-            width: 24px;
-            height: 24px;
+        .bullet-toggle-ball {
+            width: 22px;
+            height: 22px;
             background: #fff;
             border-radius: 50%;
             position: absolute;
-            top: 2px;
-            left: 2px;
+            top: 3px;
+            left: 3px;
             transition: left 0.25s;
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
 
-        .ios-toggle.on .ios-toggle-ball {
-            left: 22px;
+        .bullet-toggle.on .bullet-toggle-ball {
+            left: 25px;
         }
 
-        /* Dialer */
+        /* Dialer View */
         .keypad-view {
             flex: 1;
             display: flex;
@@ -983,7 +1130,7 @@
             height: 44px;
             color: #ffffff;
             letter-spacing: 1px;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .keypad-matrix {
@@ -997,7 +1144,8 @@
             width: 72px;
             height: 72px;
             border-radius: 50%;
-            background: #333333;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -1009,7 +1157,7 @@
         }
 
         .num-circle:active {
-            background: #666666;
+            background: rgba(0, 240, 255, 0.25);
             transform: scale(0.95);
         }
 
@@ -1017,20 +1165,20 @@
             width: 72px;
             height: 72px;
             border-radius: 50%;
-            background: var(--ios-green);
+            background: linear-gradient(135deg, #00c48c, #009668);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
+            font-size: 30px;
             color: #fff;
             cursor: pointer;
             margin: auto;
-            box-shadow: 0 4px 15px rgba(52, 199, 89, 0.4);
+            box-shadow: 0 6px 20px rgba(0, 196, 140, 0.45);
         }
 
-        /* Home Indicator Bar */
-        .home-indicator-zone {
-            height: 28px;
+        /* Fluid Navigation Gesture Bar */
+        .gesture-indicator-zone {
+            height: 26px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1038,17 +1186,18 @@
             z-index: 1000;
         }
 
-        .home-pill-bar {
-            width: 135px;
-            height: 4.5px;
-            background: rgba(255, 255, 255, 0.7);
+        .gesture-pill-bar {
+            width: 130px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.65);
             border-radius: 4px;
             transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .home-indicator-zone:hover .home-pill-bar {
-            background: #ffffff;
+        .gesture-indicator-zone:hover .gesture-pill-bar {
+            background: var(--bullet-aqua);
             width: 145px;
+            box-shadow: 0 0 10px var(--bullet-aqua);
         }
     </style>
 </head>
@@ -1060,74 +1209,77 @@
         <div class="bullet-brand-badge">
             <span class="logo">⚡</span>
             <span>BULLET IT SOLUTIONS</span>
-            <span style="color:#94a3b8; font-weight:normal;">|</span>
-            <span style="color:var(--ios-cyan);">Bullet-OS</span>
+            <span style="color:#64748b; font-weight:normal;">|</span>
+            <span style="color:var(--bullet-aqua);">Bullet-OS</span>
         </div>
-        <h1>Bullet-OS with Apple iOS Experience</h1>
+        <h1>Bullet-OS • AquaFlow Design</h1>
         <p class="lead-desc">
-            <strong>Bullet-OS</strong> is an operating system created exclusively by <strong>BULLET IT Solutions</strong>. It combines the world-famous elegance, glassmorphism, Dynamic Island, and gestures of <strong>Apple iOS</strong> with an open, high-performance <strong>Linux Kernel 6.1 &amp; AOSP foundation</strong>.
+            <strong>Bullet-OS</strong> is an independent, next-generation mobile operating system engineered entirely by <strong>Team BULLET IT Solutions</strong>. Powered by the <strong>AquaFlow UI Engine</strong> and the <strong>Linux Kernel 6.1 foundation</strong>, it delivers nature-inspired fluidity, ultra-low latency, and modern flagship elegance.
         </p>
 
         <ul class="feature-bullets">
             <li>
-                <div class="bullet-icon">🏝️</div>
-                <div><strong>Bullet Island:</strong> Pill-shaped interactive cutout that morphs for music playback, Bullet Boost mode, and call notifications.</div>
-            </li>
-            <li>
-                <div class="bullet-icon">🎛️</div>
-                <div><strong>Bullet Control Center:</strong> Swipe or tap top-right to reveal authentic iOS blurred sliders for brightness, volume, and connectivity.</div>
-            </li>
-            <li>
-                <div class="bullet-icon">📱</div>
-                <div><strong>Apple iOS Squircles &amp; Floating Dock:</strong> 22.5% continuous curvature superellipse icons with a frosted glass dock.</div>
+                <div class="bullet-icon">💧</div>
+                <div><strong>AquaFlow Visual System:</strong> Fluid organic motion, water-inspired color hierarchy, pebble squircle icons, and blurred multi-layer translucent glass.</div>
             </li>
             <li>
                 <div class="bullet-icon">⚡</div>
-                <div><strong>Bullet Lab &amp; Shield:</strong> Native C++ governor for gaming boost and strict sensor hardware kill-switch.</div>
+                <div><strong>Bullet Capsule:</strong> Smart top-status capsule that seamlessly expands for live audio, battery charging, and Bullet Boost notifications.</div>
             </li>
             <li>
-                <div class="bullet-icon">📦</div>
-                <div><strong>100% Android App Compatibility:</strong> Runs any Android APK natively with pure iOS fluidity.</div>
+                <div class="bullet-icon">🎛️</div>
+                <div><strong>Dual-Tile Quick Center:</strong> Dual prominent network cards for Wi-Fi and 5G cellular, with fluid horizontal brightness and audio sliders.</div>
+            </li>
+            <li>
+                <div class="bullet-icon">🏎️</div>
+                <div><strong>Bullet Performance Engine (`bulletd`):</strong> Native C++ governor daemon enabling dynamic CPU clock boosting and 120Hz HyperMotion.</div>
+            </li>
+            <li>
+                <div class="bullet-icon">🛡️</div>
+                <div><strong>Bullet Privacy Shield:</strong> Real-time hardware microphone and camera sensor isolation with kernel-level access guarding.</div>
             </li>
         </ul>
 
         <div class="interaction-card">
-            💡 <strong>Interactive Gestures to Test on the Phone:</strong><br>
-            • <strong>Click the Bullet Island</strong> (black pill at top) to expand music player.<br>
-            • <strong>Click Top-Right</strong> (Battery/5G) to pull down the iOS Control Center.<br>
-            • <strong>Click Top-Left</strong> (Time) to view the Lock Screen &amp; Notifications.<br>
-            • <strong>Click any App Icon</strong> (Settings, Terminal, Phone, Notes) to launch.<br>
-            • <strong>Click the Home Bar at the bottom</strong> to exit back to Home.
+            💡 <strong>Interactive Simulator Controls:</strong><br>
+            • <strong>Tap the Bullet Capsule</strong> (top pill) to expand the music player.<br>
+            • <strong>Tap Top-Right</strong> (Battery/5G) to pull down the Quick Center.<br>
+            • <strong>Tap Top-Left</strong> (Time) to view the Lock Screen &amp; Notifications.<br>
+            • <strong>Tap Any App Icon</strong> (Settings, Terminal, Phone, Notes) to launch.<br>
+            • <strong>Tap the Gesture Bar at the bottom</strong> to exit back to Home.
         </div>
     </div>
 
-    <!-- Right Column: iPhone Chassis Running Bullet-OS (iOS Edition) -->
+    <!-- Right Column: Flagship Smartphone Chassis Running Bullet-OS -->
     <div class="device-chassis">
         <div class="screen-container">
             
-            <!-- Bullet Island (Dynamic Island) -->
-            <div class="island-anchor">
-                <div class="bullet-island" id="bulletIsland" onclick="toggleIsland()">
+            <!-- Punch-hole Front Camera -->
+            <div class="punch-hole-camera"></div>
+
+            <!-- Bullet Capsule (Smart Dynamic Status) -->
+            <div class="capsule-anchor">
+                <div class="bullet-capsule" id="bulletCapsule" onclick="toggleCapsule()">
                     <!-- Compact View -->
-                    <div class="island-compact">
+                    <div class="capsule-compact">
                         <div style="display:flex; align-items:center; gap:6px;">
                             <span style="font-size:11px;">⚡</span>
-                            <span style="font-size:10px; font-weight:700; color:var(--ios-cyan);">BULLET</span>
+                            <span style="font-size:10px; font-weight:800; color:var(--bullet-aqua);">BULLET</span>
                         </div>
-                        <div class="island-camera"></div>
+                        <div style="width:12px;"></div>
                         <div class="audio-bars">
                             <span></span><span></span><span></span><span></span>
                         </div>
                     </div>
 
                     <!-- Expanded View -->
-                    <div class="island-expanded">
+                    <div class="capsule-expanded">
                         <div style="display:flex; justify-content:space-between; align-items:center;">
                             <div style="display:flex; align-items:center; gap:10px;">
-                                <div style="width:42px; height:42px; border-radius:10px; background:linear-gradient(135deg, #00f0ff, #007aff); display:flex; align-items:center; justify-content:center; font-size:22px; color:#000;">⚡</div>
+                                <div style="width:42px; height:42px; border-radius:12px; background:linear-gradient(135deg, #00f0ff, #0066ff); display:flex; align-items:center; justify-content:center; font-size:22px; color:#000;">⚡</div>
                                 <div>
                                     <div style="font-size:13px; font-weight:700; color:#fff;">Bullet Hi-Fi Audio</div>
-                                    <div style="font-size:11px; color:#8e8e93;">BULLET IT Solutions • 120Hz Active</div>
+                                    <div style="font-size:11px; color:#94a3b8;">AquaFlow Engine • 120Hz Active</div>
                                 </div>
                             </div>
                             <div class="audio-bars">
@@ -1136,10 +1288,10 @@
                         </div>
                         <!-- Music progress slider -->
                         <div style="margin: 12px 0 6px 0;">
-                            <div style="height:4px; background:rgba(255,255,255,0.2); border-radius:2px; overflow:hidden;">
-                                <div style="width:65%; height:100%; background:var(--ios-cyan);"></div>
+                            <div style="height:4px; background:rgba(255,255,255,0.15); border-radius:2px; overflow:hidden;">
+                                <div style="width:68%; height:100%; background:var(--bullet-aqua); box-shadow:0 0 8px var(--bullet-aqua);"></div>
                             </div>
-                            <div style="display:flex; justify-content:space-between; font-size:9px; color:#8e8e93; margin-top:4px;">
+                            <div style="display:flex; justify-content:space-between; font-size:9.5px; color:#94a3b8; margin-top:4px;">
                                 <span>2:10</span>
                                 <span>-1:15</span>
                             </div>
@@ -1153,111 +1305,154 @@
                 </div>
             </div>
 
-            <!-- iOS Top Status Bar -->
-            <div class="ios-top-bar">
+            <!-- Top Status Bar -->
+            <div class="bullet-top-bar">
                 <div class="status-left" onclick="toggleLock()">
-                    <span id="topClock">9:41</span>
+                    <span id="topClock">19:45</span>
                 </div>
-                <div class="status-right" onclick="toggleCC()">
+                <div class="status-right" onclick="toggleQC()">
                     <span class="carrier-tag">BULLET 5G</span>
-                    <span>📶</span>
-                    <span>􀙇</span>
-                    <div class="battery-badge">
-                        <div class="battery-level"></div>
+                    <span style="font-size:13px;">📶</span>
+                    <span style="font-size:13px;">⚡</span>
+                    <div class="battery-capsule">
+                        <div class="battery-capsule-fill"></div>
+                        <span>98%</span>
                     </div>
                 </div>
             </div>
 
-            <!-- iOS Control Center Drawer -->
-            <div class="ios-cc-drawer" id="controlCenterDrawer">
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-                    <span style="font-size:12px; font-weight:700; color:var(--ios-cyan); letter-spacing:1px;">BULLET CONTROL CENTER</span>
-                    <span onclick="toggleCC()" style="font-size:18px; cursor:pointer; color:#fff;">✕</span>
+            <!-- Bullet Quick Center Drawer -->
+            <div class="bullet-qc-drawer" id="quickCenterDrawer">
+                <div class="qc-header-bar">
+                    <span class="qc-header-title">Quick Settings</span>
+                    <span onclick="toggleQC()" style="font-size:18px; cursor:pointer; color:#fff;">✕</span>
                 </div>
 
-                <!-- 2x2 Network Pod + Media Pod -->
-                <div class="cc-top-row">
-                    <div class="cc-network-pod">
-                        <div class="net-circle-btn active orange" onclick="this.classList.toggle('active')">✈️</div>
-                        <div class="net-circle-btn active green" onclick="this.classList.toggle('active')">📶</div>
-                        <div class="net-circle-btn active blue" onclick="this.classList.toggle('active')">􀙇</div>
-                        <div class="net-circle-btn active blue" onclick="this.classList.toggle('active')">ᛒ</div>
-                    </div>
-
-                    <div class="cc-media-pod">
-                        <div>
-                            <div class="media-track-name">Bullet Hi-Fi</div>
-                            <div class="media-artist-name">BULLET IT Audio</div>
-                        </div>
-                        <div class="media-btns-row">
-                            <span>⏮️</span>
-                            <span>▶️</span>
-                            <span>⏭️</span>
+                <!-- Prominent Dual Pill Tiles (Bullet AquaFlow Style) -->
+                <div class="qc-dual-pill-grid">
+                    <!-- Wi-Fi Tile -->
+                    <div class="qc-pill-card active" onclick="this.classList.toggle('active')">
+                        <div class="qc-pill-icon">📶</div>
+                        <div class="qc-pill-info">
+                            <span class="qc-pill-name">Wi-Fi</span>
+                            <span class="qc-pill-sub">Bullet-Office-5G</span>
                         </div>
                     </div>
-                </div>
 
-                <!-- Sliders & Shortcuts -->
-                <div class="cc-vertical-sliders-row">
-                    <div class="cc-tile-btn active" onclick="this.classList.toggle('active')">
-                        <span>🔒</span>
-                        <span class="cc-tile-label">Lock</span>
-                    </div>
-                    <div class="cc-tile-btn" onclick="this.classList.toggle('active')">
-                        <span>🌙</span>
-                        <span class="cc-tile-label">Focus</span>
-                    </div>
-
-                    <!-- Brightness Vertical Slider -->
-                    <div class="vertical-slider-track" onclick="dragSlider(this, event)">
-                        <div class="vertical-slider-fill" style="height: 75%;"></div>
-                        <div class="vertical-slider-icon">☀️</div>
-                    </div>
-
-                    <!-- Volume Vertical Slider -->
-                    <div class="vertical-slider-track" onclick="dragSlider(this, event)">
-                        <div class="vertical-slider-fill" style="height: 60%;"></div>
-                        <div class="vertical-slider-icon">🔊</div>
+                    <!-- Cellular Data Tile -->
+                    <div class="qc-pill-card active" onclick="this.classList.toggle('active')">
+                        <div class="qc-pill-icon">🌐</div>
+                        <div class="qc-pill-info">
+                            <span class="qc-pill-name">Mobile Data</span>
+                            <span class="qc-pill-sub">BULLET 5G</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Quick Action Buttons -->
-                <div class="cc-bottom-actions-grid">
-                    <div class="cc-action-sq active" onclick="this.classList.toggle('active')">🔦</div>
-                    <div class="cc-action-sq" onclick="openApp('appSettings'); toggleCC();">⚡</div>
-                    <div class="cc-action-sq" onclick="openApp('appTerminal'); toggleCC();">💻</div>
-                    <div class="cc-action-sq" onclick="openApp('appDialer'); toggleCC();">📞</div>
+                <!-- Circular / Squircle Quick Toggles Grid -->
+                <div class="qc-toggles-grid">
+                    <div class="qc-toggle-item" onclick="toggleBtn(this)">
+                        <div class="qc-circle-btn active">ᛒ</div>
+                        <span class="qc-toggle-label">Bluetooth</span>
+                    </div>
+                    <div class="qc-toggle-item" onclick="toggleBtn(this)">
+                        <div class="qc-circle-btn active">⚡</div>
+                        <span class="qc-toggle-label">Boost</span>
+                    </div>
+                    <div class="qc-toggle-item" onclick="toggleBtn(this)">
+                        <div class="qc-circle-btn">🔦</div>
+                        <span class="qc-toggle-label">Torch</span>
+                    </div>
+                    <div class="qc-toggle-item" onclick="toggleBtn(this)">
+                        <div class="qc-circle-btn active">🛡️</div>
+                        <span class="qc-toggle-label">Shield</span>
+                    </div>
+                    <div class="qc-toggle-item" onclick="toggleBtn(this)">
+                        <div class="qc-circle-btn active">🔄</div>
+                        <span class="qc-toggle-label">Auto Rotate</span>
+                    </div>
+                    <div class="qc-toggle-item" onclick="toggleBtn(this)">
+                        <div class="qc-circle-btn active">🌙</div>
+                        <span class="qc-toggle-label">Dark Mode</span>
+                    </div>
+                    <div class="qc-toggle-item" onclick="toggleBtn(this)">
+                        <div class="qc-circle-btn">🔕</div>
+                        <span class="qc-toggle-label">DND</span>
+                    </div>
+                    <div class="qc-toggle-item" onclick="toggleBtn(this)">
+                        <div class="qc-circle-btn">📡</div>
+                        <span class="qc-toggle-label">Hotspot</span>
+                    </div>
+                </div>
+
+                <!-- Horizontal Sliders (Brightness & Volume) -->
+                <div class="qc-sliders-container">
+                    <!-- Brightness Slider -->
+                    <div class="horizontal-slider-card" onclick="dragHSlider(this, event)">
+                        <div class="horizontal-slider-fill" style="width: 78%;"></div>
+                        <span class="horizontal-slider-icon">☀️</span>
+                        <span class="horizontal-slider-text">Brightness</span>
+                        <span class="horizontal-slider-percent">78%</span>
+                    </div>
+
+                    <!-- Volume Slider -->
+                    <div class="horizontal-slider-card" onclick="dragHSlider(this, event)">
+                        <div class="horizontal-slider-fill" style="width: 65%;"></div>
+                        <span class="horizontal-slider-icon">🔊</span>
+                        <span class="horizontal-slider-text">Media Volume</span>
+                        <span class="horizontal-slider-percent">65%</span>
+                    </div>
+                </div>
+
+                <!-- Media Player Card -->
+                <div class="qc-media-card">
+                    <div class="qc-media-thumb">⚡</div>
+                    <div class="qc-media-meta">
+                        <div class="qc-media-title">Bullet Symphony</div>
+                        <div class="qc-media-sub">BULLET Hi-Fi Audio Engine</div>
+                    </div>
+                    <div class="qc-media-controls">
+                        <span>⏮️</span>
+                        <span>▶️</span>
+                        <span>⏭️</span>
+                    </div>
+                </div>
+
+                <!-- RAM Cleaner Banner -->
+                <div class="qc-clean-banner" onclick="cleanRam(this)">
+                    <span>⚡ <strong>System Optimizer:</strong> 4.8 GB / 12 GB RAM in use</span>
+                    <span style="color:var(--bullet-aqua); font-weight:700;">Clean &gt;</span>
                 </div>
             </div>
 
-            <!-- iOS Lock Screen Drawer -->
-            <div class="ios-lock-drawer" id="lockScreenDrawer">
+            <!-- Lock Screen / Notification Drawer -->
+            <div class="bullet-lock-drawer" id="lockScreenDrawer">
                 <div class="lock-time-box">
                     <div class="lock-carrier-header">BULLET IT SOLUTIONS</div>
                     <div class="lock-date-str" id="lockDateStr">Thursday, October 22</div>
-                    <div class="lock-clock-large" id="lockClockLarge">9:41</div>
+                    <div class="lock-clock-large" id="lockClockLarge">19:45</div>
                 </div>
 
                 <div class="lock-notifs">
-                    <div class="glass-notification">
-                        <div class="notif-badge-icon" style="background:#007aff;">💬</div>
+                    <div class="aquamorphic-notification">
+                        <div class="notif-badge-icon">💬</div>
                         <div>
-                            <div class="notif-text-title">Messages • BULLET IT</div>
-                            <div class="notif-text-body">Bullet-OS (iOS Edition) is live and ready for deployment.</div>
+                            <div class="notif-text-title">Bullet Connect • Team BULLET</div>
+                            <div class="notif-text-body">Bullet-OS AquaFlow is active. System running at optimal latency.</div>
                         </div>
                     </div>
-                    <div class="glass-notification">
-                        <div class="notif-badge-icon" style="background:var(--ios-cyan); color:#000;">⚡</div>
+                    <div class="aquamorphic-notification">
+                        <div class="notif-badge-icon" style="background:linear-gradient(135deg, #00c48c, #00f0ff);">⚡</div>
                         <div>
                             <div class="notif-text-title">Bullet Lab • Kernel Active</div>
-                            <div class="notif-text-body">Bullet Boost governor running with 120Hz display refresh.</div>
+                            <div class="notif-text-body">Bullet Boost governor enabled with 120Hz display refresh.</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="lock-actions-row">
                     <div class="circle-action-btn" onclick="alert('Flashlight toggled')">🔦</div>
-                    <span style="font-size:12px; color:rgba(255,255,255,0.7);">Swipe up to unlock</span>
+                    <span style="font-size:12px; color:rgba(255,255,255,0.75);">Tap to unlock</span>
                     <div class="circle-action-btn" onclick="toggleLock()">✕</div>
                 </div>
             </div>
@@ -1267,102 +1462,104 @@
                 <!-- Home Screen -->
                 <div class="home-desktop" id="homeDesktop">
                     
-                    <!-- 2x2 Widgets Row -->
-                    <div class="ios-widgets-deck">
+                    <!-- Aquamorphic Smart Widgets (Shelf Style) -->
+                    <div class="bullet-widgets-deck">
                         <!-- Weather Widget -->
-                        <div class="ios-card-widget" style="background: linear-gradient(135deg, rgba(30,58,138,0.75), rgba(15,23,42,0.85));">
+                        <div class="aquamorphic-widget" style="background: linear-gradient(145deg, rgba(14, 56, 122, 0.75), rgba(8, 24, 52, 0.88)); border-color: rgba(0, 240, 255, 0.25);">
                             <div>
-                                <div class="weather-sub">Colombo</div>
+                                <div class="weather-sub"><span>📍</span> Colombo</div>
                                 <div class="weather-big-temp">29°</div>
                             </div>
-                            <div style="font-size:11px; color:#8e8e93; display:flex; justify-content:space-between;">
-                                <span>☀️ Sunny</span>
-                                <span>H:31° L:25°</span>
+                            <div style="font-size:11px; color:#cbd5e1; display:flex; justify-content:space-between;">
+                                <span>☀️ Clear Sky</span>
+                                <span>H:32° L:26°</span>
                             </div>
                         </div>
 
-                        <!-- Batteries Widget -->
-                        <div class="ios-card-widget">
-                            <div class="battery-entry">
-                                <span>Bullet Phone</span>
-                                <div class="battery-ring-svg">98%</div>
+                        <!-- System Health & Boost Radial Widget -->
+                        <div class="aquamorphic-widget" onclick="triggerBoostAnim(this)">
+                            <div>
+                                <div style="font-size:11px; font-weight:700; color:var(--bullet-aqua); text-transform:uppercase; letter-spacing:0.5px;">SYSTEM HEALTH</div>
+                                <div style="font-size:14px; font-weight:700; color:#fff; margin-top:2px;">120Hz Active</div>
                             </div>
-                            <div class="battery-entry">
-                                <span>Bullet Buds</span>
-                                <div class="battery-ring-svg" style="border-color:#007aff; box-shadow:0 0 10px rgba(0,122,255,0.4);">85%</div>
+                            <div class="system-gauge-row">
+                                <div class="system-gauge-radial" id="widgetGauge">
+                                    <span>98%</span>
+                                </div>
+                                <div style="text-align:right;">
+                                    <div style="font-size:10px; color:var(--bullet-text-sub);">CPU 3.2GHz</div>
+                                    <div style="font-size:11px; color:var(--bullet-emerald); font-weight:700;">Boosted ⚡</div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- iOS Apps Grid (4 columns) -->
-                    <div class="ios-grid-apps">
-                        <!-- FaceTime -->
+                    <!-- Apps Grid (4 columns, Pebble Squircles) -->
+                    <div class="bullet-grid-apps">
+                        <!-- Phone -->
                         <div class="app-touch-target" onclick="openApp('appDialer')">
-                            <div class="squircle-app-icon" style="background: linear-gradient(135deg, #34c759, #30b050);">📹</div>
-                            <span class="app-caption">FaceTime</span>
+                            <div class="pebble-app-icon" style="background: linear-gradient(135deg, #00c48c, #00875a);">📞</div>
+                            <span class="app-caption">Phone</span>
                         </div>
-                        <!-- Calendar -->
+                        <!-- Messages -->
                         <div class="app-touch-target">
-                            <div class="squircle-app-icon" style="background: #ffffff; color: #ff3b30; flex-direction: column;">
-                                <span style="font-size:9px; text-transform:uppercase; color:#ff3b30; font-weight:bold;">THU</span>
-                                <span style="font-size:24px; color:#000; font-weight:bold;">22</span>
-                            </div>
-                            <span class="app-caption">Calendar</span>
+                            <div class="pebble-app-icon" style="background: linear-gradient(135deg, #0066ff, #003db3);">💬</div>
+                            <span class="app-caption">Messages</span>
                         </div>
-                        <!-- Photos -->
+                        <!-- Browser -->
                         <div class="app-touch-target">
-                            <div class="squircle-app-icon" style="background: #ffffff;">🌸</div>
-                            <span class="app-caption">Photos</span>
+                            <div class="pebble-app-icon" style="background: linear-gradient(135deg, #00f0ff, #0099ff); color:#000;">🌐</div>
+                            <span class="app-caption">Browser</span>
                         </div>
                         <!-- Camera -->
                         <div class="app-touch-target">
-                            <div class="squircle-app-icon" style="background: linear-gradient(135deg, #48484a, #2c2c2e);">📷</div>
+                            <div class="pebble-app-icon" style="background: linear-gradient(135deg, #2b3952, #182236);">📷</div>
                             <span class="app-caption">Camera</span>
                         </div>
 
-                        <!-- Mail -->
+                        <!-- Gallery -->
                         <div class="app-touch-target">
-                            <div class="squircle-app-icon" style="background: linear-gradient(135deg, #007aff, #0056b3);">✉️</div>
-                            <span class="app-caption">Mail</span>
+                            <div class="pebble-app-icon" style="background: linear-gradient(135deg, #ff9500, #ff5e3a);">🌄</div>
+                            <span class="app-caption">Photos</span>
                         </div>
                         <!-- Clock -->
                         <div class="app-touch-target">
-                            <div class="squircle-app-icon" style="background: #000000; border-color:#fff;">⏰</div>
+                            <div class="pebble-app-icon" style="background: linear-gradient(135deg, #1e293b, #0f172a); border-color:#00f0ff;">⏰</div>
                             <span class="app-caption">Clock</span>
                         </div>
-                        <!-- Maps -->
+                        <!-- Files -->
                         <div class="app-touch-target">
-                            <div class="squircle-app-icon" style="background: linear-gradient(135deg, #34c759, #007aff);">🗺️</div>
-                            <span class="app-caption">Maps</span>
+                            <div class="pebble-app-icon" style="background: linear-gradient(135deg, #ffb800, #e67e22);">📁</div>
+                            <span class="app-caption">Files</span>
                         </div>
                         <!-- Weather -->
                         <div class="app-touch-target">
-                            <div class="squircle-app-icon" style="background: linear-gradient(135deg, #007aff, #5ac8fa);">🌤️</div>
+                            <div class="pebble-app-icon" style="background: linear-gradient(135deg, #00a8ff, #0055ff);">🌤️</div>
                             <span class="app-caption">Weather</span>
                         </div>
 
-                        <!-- Bullet Lab (Settings) -->
+                        <!-- Bullet Settings / Lab -->
                         <div class="app-touch-target" onclick="openApp('appSettings')">
-                            <div class="squircle-app-icon" style="background: linear-gradient(135deg, #1e293b, #0f172a); border: 1.5px solid var(--ios-cyan); box-shadow: 0 0 16px rgba(0, 240, 255, 0.45); color: var(--ios-cyan);">
+                            <div class="pebble-app-icon" style="background: linear-gradient(135deg, #111c30, #090e1c); border: 1.5px solid var(--bullet-aqua); box-shadow: 0 0 16px rgba(0, 240, 255, 0.5); color: var(--bullet-aqua);">
                                 ⚡
                             </div>
                             <span class="app-caption">Settings</span>
                         </div>
                         <!-- Bullet Terminal -->
                         <div class="app-touch-target" onclick="openApp('appTerminal')">
-                            <div class="squircle-app-icon" style="background: #000000; border: 1px solid #00f0ff; color: #00f0ff;">
+                            <div class="pebble-app-icon" style="background: #000000; border: 1px solid var(--bullet-aqua); color: var(--bullet-aqua);">
                                 💻
                             </div>
                             <span class="app-caption">Terminal</span>
                         </div>
-                        <!-- App Store -->
+                        <!-- Bullet Store -->
                         <div class="app-touch-target">
-                            <div class="squircle-app-icon" style="background: linear-gradient(135deg, #007aff, #0040dd);">🅰️</div>
-                            <span class="app-caption">App Store</span>
+                            <div class="pebble-app-icon" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">🚀</div>
+                            <span class="app-caption">App Hub</span>
                         </div>
                         <!-- Notes -->
                         <div class="app-touch-target">
-                            <div class="squircle-app-icon" style="background: #fff; color: #eab308;">📝</div>
+                            <div class="pebble-app-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">📝</div>
                             <span class="app-caption">Notes</span>
                         </div>
                     </div>
@@ -1373,144 +1570,159 @@
                         <div class="dot-crumb"></div>
                     </div>
 
-                    <!-- iOS Floating Frosted Glass Dock -->
-                    <div class="ios-bottom-dock">
+                    <!-- Bottom Floating Dock -->
+                    <div class="bullet-bottom-dock">
                         <div class="app-touch-target" onclick="openApp('appDialer')">
-                            <div class="squircle-app-icon" style="background: linear-gradient(135deg, #34c759, #28a745);">📞</div>
+                            <div class="pebble-app-icon" style="background: linear-gradient(135deg, #00c48c, #00875a);">📞</div>
                         </div>
                         <div class="app-touch-target">
-                            <div class="squircle-app-icon" style="background: #ffffff;">🧭</div>
+                            <div class="pebble-app-icon" style="background: linear-gradient(135deg, #00f0ff, #0099ff); color:#000;">🌐</div>
                         </div>
                         <div class="app-touch-target">
-                            <div class="squircle-app-icon" style="background: linear-gradient(135deg, #34c759, #30b050);">💬</div>
+                            <div class="pebble-app-icon" style="background: linear-gradient(135deg, #0066ff, #003db3);">💬</div>
                         </div>
-                        <div class="app-touch-target">
-                            <div class="squircle-app-icon" style="background: linear-gradient(135deg, #ff2d55, #fa233b);">🎵</div>
+                        <div class="app-touch-target" onclick="toggleCapsule()">
+                            <div class="pebble-app-icon" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">🎵</div>
                         </div>
                     </div>
 
                 </div>
 
-                <!-- App Window: Settings (iOS Grouped Inset Lists) -->
-                <div class="app-window-ios" id="appSettings">
-                    <div class="ios-window-nav">
-                        <span class="ios-window-title">Settings</span>
+                <!-- App Window: Settings (AquaFlow Card Groups) -->
+                <div class="app-window-bullet" id="appSettings">
+                    <div class="bullet-window-nav">
+                        <span class="bullet-window-title">Settings</span>
                         <button class="nav-done-btn" onclick="closeApp('appSettings')">Done</button>
                     </div>
 
-                    <div class="ios-grouped-scroll">
-                        <!-- Profile Card -->
+                    <div class="bullet-grouped-scroll">
+                        <!-- BULLET Profile Card -->
                         <div class="bullet-id-card">
                             <div class="bullet-avatar">⚡</div>
                             <div>
-                                <div style="font-size:17px; font-weight:700; color:#fff;">BULLET IT Solutions</div>
-                                <div style="font-size:12px; color:var(--ios-text-sub);">BULLET ID, Bullet Cloud, Security</div>
+                                <div style="font-size:17px; font-weight:700; color:#fff;">Team BULLET IT Solutions</div>
+                                <div style="font-size:12px; color:var(--bullet-text-sub);">BULLET ID • Cloud &amp; Security</div>
+                            </div>
+                        </div>
+
+                        <!-- Hardware Spec Card (Bullet AquaFlow Style) -->
+                        <div class="device-spec-card">
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-size:15px; font-weight:800; color:#fff;">Bullet Ultra Pro</span>
+                                <span style="font-size:11px; font-weight:700; color:var(--bullet-aqua); background:rgba(0,240,255,0.18); padding:3px 8px; border-radius:10px;">AquaFlow 1.0</span>
+                            </div>
+                            <div class="spec-storage-bar">
+                                <div class="spec-bar-used"></div>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; font-size:11px; color:#cbd5e1;">
+                                <span>Storage: 96 GB / 256 GB</span>
+                                <span>RAM: 12 GB + 4 GB Expansion</span>
                             </div>
                         </div>
 
                         <!-- Network Group -->
-                        <div class="ios-section-group">
-                            <div class="ios-row-item">
+                        <div class="bullet-section-group">
+                            <div class="bullet-row-item">
                                 <div style="display:flex; align-items:center; gap:12px;">
-                                    <div class="row-icon-badge" style="background:var(--ios-orange);">✈️</div>
+                                    <div class="row-icon-badge" style="background:var(--bullet-amber);">✈️</div>
                                     <span>Airplane Mode</span>
                                 </div>
-                                <div class="ios-toggle" onclick="this.classList.toggle('on')"><div class="ios-toggle-ball"></div></div>
+                                <div class="bullet-toggle" onclick="this.classList.toggle('on')"><div class="bullet-toggle-ball"></div></div>
                             </div>
-                            <div class="ios-row-item">
+                            <div class="bullet-row-item">
                                 <div style="display:flex; align-items:center; gap:12px;">
-                                    <div class="row-icon-badge" style="background:var(--ios-blue);">📶</div>
+                                    <div class="row-icon-badge" style="background:var(--bullet-ocean);">📶</div>
                                     <span>Wi-Fi</span>
                                 </div>
-                                <div style="color:var(--ios-text-sub); font-size:14px;"><span>Bullet-Office-5G</span> <span>›</span></div>
+                                <div style="color:var(--bullet-text-sub); font-size:14px;"><span>Bullet-Office-5G</span> <span>›</span></div>
                             </div>
-                            <div class="ios-row-item">
+                            <div class="bullet-row-item">
                                 <div style="display:flex; align-items:center; gap:12px;">
-                                    <div class="row-icon-badge" style="background:var(--ios-blue);">ᛒ</div>
+                                    <div class="row-icon-badge" style="background:var(--bullet-ocean);">ᛒ</div>
                                     <span>Bluetooth</span>
                                 </div>
-                                <div style="color:var(--ios-text-sub); font-size:14px;"><span>On</span> <span>›</span></div>
+                                <div style="color:var(--bullet-text-sub); font-size:14px;"><span>Connected</span> <span>›</span></div>
                             </div>
-                            <div class="ios-row-item">
+                            <div class="bullet-row-item">
                                 <div style="display:flex; align-items:center; gap:12px;">
-                                    <div class="row-icon-badge" style="background:var(--ios-green);">📱</div>
-                                    <span>Cellular</span>
+                                    <div class="row-icon-badge" style="background:var(--bullet-emerald);">🌐</div>
+                                    <span>Mobile Network</span>
                                 </div>
-                                <div style="color:var(--ios-text-sub); font-size:14px;"><span>BULLET 5G</span> <span>›</span></div>
+                                <div style="color:var(--bullet-text-sub); font-size:14px;"><span>BULLET 5G</span> <span>›</span></div>
                             </div>
                         </div>
 
-                        <!-- Bullet-OS Exclusive Hardware Tweaks -->
-                        <div style="font-size:12px; font-weight:700; color:var(--ios-cyan); margin: 0 0 8px 12px; text-transform:uppercase; letter-spacing:0.5px;">
-                            Bullet-OS Core Lab
+                        <!-- Bullet Core Lab Section -->
+                        <div style="font-size:12px; font-weight:800; color:var(--bullet-aqua); margin: 0 0 8px 12px; text-transform:uppercase; letter-spacing:0.6px;">
+                            Bullet Core Lab &amp; Hardware
                         </div>
-                        <div class="ios-section-group">
-                            <div class="ios-row-item">
+                        <div class="bullet-section-group">
+                            <div class="bullet-row-item">
                                 <div style="display:flex; align-items:center; gap:12px;">
-                                    <div class="row-icon-badge" style="background:linear-gradient(135deg, #00f0ff, #007aff); color:#000;">⚡</div>
+                                    <div class="row-icon-badge" style="background:linear-gradient(135deg, #00f0ff, #0066ff); color:#000;">⚡</div>
                                     <div>
                                         <div>Bullet Boost Mode</div>
-                                        <div style="font-size:11px; color:var(--ios-text-sub);">Lock CPU governor to performance</div>
+                                        <div style="font-size:11px; color:var(--bullet-text-sub);">Lock CPU governor to performance</div>
                                     </div>
                                 </div>
-                                <div class="ios-toggle on" onclick="this.classList.toggle('on')"><div class="ios-toggle-ball"></div></div>
+                                <div class="bullet-toggle on" onclick="this.classList.toggle('on')"><div class="bullet-toggle-ball"></div></div>
                             </div>
-                            <div class="ios-row-item">
+                            <div class="bullet-row-item">
                                 <div style="display:flex; align-items:center; gap:12px;">
-                                    <div class="row-icon-badge" style="background:linear-gradient(135deg, #ff9500, #ff3b30);">🛡️</div>
+                                    <div class="row-icon-badge" style="background:linear-gradient(135deg, #ff9500, #ff5252);">🛡️</div>
                                     <div>
                                         <div>Bullet Privacy Shield</div>
-                                        <div style="font-size:11px; color:var(--ios-text-sub);">Hardware mic/camera isolation</div>
+                                        <div style="font-size:11px; color:var(--bullet-text-sub);">Hardware mic/camera isolation</div>
                                     </div>
                                 </div>
-                                <div class="ios-toggle on" onclick="this.classList.toggle('on')"><div class="ios-toggle-ball"></div></div>
+                                <div class="bullet-toggle on" onclick="this.classList.toggle('on')"><div class="bullet-toggle-ball"></div></div>
                             </div>
-                            <div class="ios-row-item">
+                            <div class="bullet-row-item">
                                 <div style="display:flex; align-items:center; gap:12px;">
-                                    <div class="row-icon-badge" style="background:#5856d6;">🖥️</div>
-                                    <span>ProMotion 120Hz</span>
+                                    <div class="row-icon-badge" style="background:#8b5cf6;">🖥️</div>
+                                    <span>HyperMotion 120Hz</span>
                                 </div>
-                                <div style="color:var(--ios-cyan); font-weight:700; font-size:14px;">120 Hz <span>›</span></div>
+                                <div style="color:var(--bullet-aqua); font-weight:700; font-size:14px;">120 Hz <span>›</span></div>
                             </div>
                         </div>
 
-                        <!-- Device Information -->
-                        <div class="ios-section-group">
-                            <div class="ios-row-item">
+                        <!-- About Bullet-OS -->
+                        <div class="bullet-section-group">
+                            <div class="bullet-row-item">
                                 <div style="display:flex; align-items:center; gap:12px;">
-                                    <div class="row-icon-badge" style="background:#8e8e93;">⚙️</div>
-                                    <span>General</span>
+                                    <div class="row-icon-badge" style="background:#64748b;">⚙️</div>
+                                    <span>System Updates</span>
                                 </div>
-                                <div style="color:var(--ios-text-sub); font-size:14px;"><span>›</span></div>
+                                <div style="color:var(--bullet-aqua); font-size:13px; font-weight:700;">Up to date <span>›</span></div>
                             </div>
-                            <div class="ios-row-item">
+                            <div class="bullet-row-item">
                                 <div style="display:flex; align-items:center; gap:12px;">
-                                    <div class="row-icon-badge" style="background:#007aff;">ℹ️</div>
+                                    <div class="row-icon-badge" style="background:var(--bullet-ocean);">ℹ️</div>
                                     <span>About Bullet-OS</span>
                                 </div>
-                                <div style="color:var(--ios-text-sub); font-size:14px;"><span>v1.0 (Kinetic)</span> <span>›</span></div>
+                                <div style="color:var(--bullet-text-sub); font-size:14px;"><span>v1.0 (Kinetic)</span> <span>›</span></div>
                             </div>
                         </div>
 
-                        <div style="text-align:center; font-size:11px; color:var(--ios-text-sub); margin-top:14px; line-height:1.6;">
-                            <strong>Bullet-OS</strong> • iOS Fluid Shell<br>
-                            Engineered by <strong>BULLET IT Solutions</strong>
+                        <div style="text-align:center; font-size:11.5px; color:var(--bullet-text-sub); margin-top:16px; line-height:1.6;">
+                            <strong>Bullet-OS</strong> • AquaFlow Edition<br>
+                            Engineered exclusively by <strong>BULLET IT Solutions</strong>
                         </div>
                     </div>
                 </div>
 
-                <!-- App Window: Terminal (iOS Developer CLI) -->
-                <div class="app-window-ios" id="appTerminal">
-                    <div class="ios-window-nav">
-                        <span class="ios-window-title">Bullet Terminal</span>
+                <!-- App Window: Terminal (Bullet Developer CLI) -->
+                <div class="app-window-bullet" id="appTerminal">
+                    <div class="bullet-window-nav">
+                        <span class="bullet-window-title">Bullet Terminal</span>
                         <button class="nav-done-btn" onclick="closeApp('appTerminal')">Done</button>
                     </div>
-                    <div style="flex:1; background:#000; padding:14px; font-family:monospace; font-size:11px; color:var(--ios-cyan); display:flex; flex-direction:column;">
-                        <div id="terminalScreen" style="flex:1; overflow-y:auto; line-height:1.4; white-space:pre-wrap;">Bullet-OS [iOS Fluid Edition]
+                    <div style="flex:1; background:#000; padding:14px; font-family:monospace; font-size:11px; color:var(--bullet-aqua); display:flex; flex-direction:column;">
+                        <div id="terminalScreen" style="flex:1; overflow-y:auto; line-height:1.45; white-space:pre-wrap;">Bullet-OS [AquaFlow Edition]
 Linux bullet-os 6.1.75-bullet-arm64 #1 SMP PREEMPT
 BULLET IT Solutions (Team-of-BULLET-IT-Solutions)
 Type 'help', 'neofetch', 'uname', 'top', 'ps'
-root@bullet-os:~# </div>
+bullet@bullet-os:~$ </div>
                         <div style="display:flex; gap:6px; margin-top:8px;">
                             <span style="color:#fff;">$</span>
                             <input type="text" id="cmdInput" onkeydown="executeTerm(event)" style="flex:1; background:transparent; border:none; outline:none; color:#fff; font-family:monospace; font-size:12px;" placeholder="command...">
@@ -1519,26 +1731,26 @@ root@bullet-os:~# </div>
                 </div>
 
                 <!-- App Window: Phone Keypad -->
-                <div class="app-window-ios" id="appDialer">
-                    <div class="ios-window-nav">
-                        <span class="ios-window-title">Keypad</span>
+                <div class="app-window-bullet" id="appDialer">
+                    <div class="bullet-window-nav">
+                        <span class="bullet-window-title">Keypad</span>
                         <button class="nav-done-btn" onclick="closeApp('appDialer')">Done</button>
                     </div>
                     <div class="keypad-view">
                         <div class="keypad-input-display" id="keypadNumber"></div>
                         <div class="keypad-matrix">
-                            <div class="num-circle" onclick="pressNum('1')"><span style="font-size:28px; line-height:1;">1</span></div>
-                            <div class="num-circle" onclick="pressNum('2')"><span style="font-size:28px; line-height:1;">2</span><span style="font-size:9px; font-weight:700; letter-spacing:1px;">ABC</span></div>
-                            <div class="num-circle" onclick="pressNum('3')"><span style="font-size:28px; line-height:1;">3</span><span style="font-size:9px; font-weight:700; letter-spacing:1px;">DEF</span></div>
-                            <div class="num-circle" onclick="pressNum('4')"><span style="font-size:28px; line-height:1;">4</span><span style="font-size:9px; font-weight:700; letter-spacing:1px;">GHI</span></div>
-                            <div class="num-circle" onclick="pressNum('5')"><span style="font-size:28px; line-height:1;">5</span><span style="font-size:9px; font-weight:700; letter-spacing:1px;">JKL</span></div>
-                            <div class="num-circle" onclick="pressNum('6')"><span style="font-size:28px; line-height:1;">6</span><span style="font-size:9px; font-weight:700; letter-spacing:1px;">MNO</span></div>
-                            <div class="num-circle" onclick="pressNum('7')"><span style="font-size:28px; line-height:1;">7</span><span style="font-size:9px; font-weight:700; letter-spacing:1px;">PQRS</span></div>
-                            <div class="num-circle" onclick="pressNum('8')"><span style="font-size:28px; line-height:1;">8</span><span style="font-size:9px; font-weight:700; letter-spacing:1px;">TUV</span></div>
-                            <div class="num-circle" onclick="pressNum('9')"><span style="font-size:28px; line-height:1;">9</span><span style="font-size:9px; font-weight:700; letter-spacing:1px;">WXYZ</span></div>
-                            <div class="num-circle" onclick="pressNum('*')"><span style="font-size:28px; line-height:1;">*</span></div>
-                            <div class="num-circle" onclick="pressNum('0')"><span style="font-size:28px; line-height:1;">0</span><span style="font-size:10px;">+</span></div>
-                            <div class="num-circle" onclick="pressNum('#')"><span style="font-size:28px; line-height:1;">#</span></div>
+                            <div class="num-circle" onclick="pressNum('1')"><span style="font-size:26px; line-height:1;">1</span></div>
+                            <div class="num-circle" onclick="pressNum('2')"><span style="font-size:26px; line-height:1;">2</span><span style="font-size:9px; font-weight:700; letter-spacing:1px;">ABC</span></div>
+                            <div class="num-circle" onclick="pressNum('3')"><span style="font-size:26px; line-height:1;">3</span><span style="font-size:9px; font-weight:700; letter-spacing:1px;">DEF</span></div>
+                            <div class="num-circle" onclick="pressNum('4')"><span style="font-size:26px; line-height:1;">4</span><span style="font-size:9px; font-weight:700; letter-spacing:1px;">GHI</span></div>
+                            <div class="num-circle" onclick="pressNum('5')"><span style="font-size:26px; line-height:1;">5</span><span style="font-size:9px; font-weight:700; letter-spacing:1px;">JKL</span></div>
+                            <div class="num-circle" onclick="pressNum('6')"><span style="font-size:26px; line-height:1;">6</span><span style="font-size:9px; font-weight:700; letter-spacing:1px;">MNO</span></div>
+                            <div class="num-circle" onclick="pressNum('7')"><span style="font-size:26px; line-height:1;">7</span><span style="font-size:9px; font-weight:700; letter-spacing:1px;">PQRS</span></div>
+                            <div class="num-circle" onclick="pressNum('8')"><span style="font-size:26px; line-height:1;">8</span><span style="font-size:9px; font-weight:700; letter-spacing:1px;">TUV</span></div>
+                            <div class="num-circle" onclick="pressNum('9')"><span style="font-size:26px; line-height:1;">9</span><span style="font-size:9px; font-weight:700; letter-spacing:1px;">WXYZ</span></div>
+                            <div class="num-circle" onclick="pressNum('*')"><span style="font-size:26px; line-height:1;">*</span></div>
+                            <div class="num-circle" onclick="pressNum('0')"><span style="font-size:26px; line-height:1;">0</span><span style="font-size:10px;">+</span></div>
+                            <div class="num-circle" onclick="pressNum('#')"><span style="font-size:26px; line-height:1;">#</span></div>
                         </div>
                         <div class="call-action-pill" onclick="alert('Calling ' + document.getElementById('keypadNumber').innerText)">📞</div>
                     </div>
@@ -1546,9 +1758,9 @@ root@bullet-os:~# </div>
 
             </div>
 
-            <!-- iOS Bottom Home Indicator Bar -->
-            <div class="home-indicator-zone" onclick="returnHome()">
-                <div class="home-pill-bar"></div>
+            <!-- Fluid Navigation Gesture Bar -->
+            <div class="gesture-indicator-zone" onclick="returnHome()">
+                <div class="gesture-pill-bar"></div>
             </div>
 
         </div>
@@ -1572,14 +1784,14 @@ root@bullet-os:~# </div>
     setInterval(tickClock, 1000);
     tickClock();
 
-    // Bullet Island Toggle
-    function toggleIsland() {
-        document.getElementById('bulletIsland').classList.toggle('expanded');
+    // Bullet Capsule Toggle
+    function toggleCapsule() {
+        document.getElementById('bulletCapsule').classList.toggle('expanded');
     }
 
-    // Control Center Toggle
-    function toggleCC() {
-        document.getElementById('controlCenterDrawer').classList.toggle('active');
+    // Quick Center Toggle
+    function toggleQC() {
+        document.getElementById('quickCenterDrawer').classList.toggle('active');
     }
 
     // Lock Screen Toggle
@@ -1589,7 +1801,7 @@ root@bullet-os:~# </div>
 
     // App Navigation
     function openApp(id) {
-        document.querySelectorAll('.app-window-ios').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.app-window-bullet').forEach(el => el.classList.remove('active'));
         document.getElementById(id).classList.add('active');
     }
 
@@ -1598,11 +1810,17 @@ root@bullet-os:~# </div>
     }
 
     function returnHome() {
-        document.querySelectorAll('.app-window-ios').forEach(el => el.classList.remove('active'));
-        document.getElementById('controlCenterDrawer').classList.remove('active');
+        document.querySelectorAll('.app-window-bullet').forEach(el => el.classList.remove('active'));
+        document.getElementById('quickCenterDrawer').classList.remove('active');
         document.getElementById('lockScreenDrawer').classList.remove('active');
-        const island = document.getElementById('bulletIsland');
-        if (island.classList.contains('expanded')) island.classList.remove('expanded');
+        const capsule = document.getElementById('bulletCapsule');
+        if (capsule.classList.contains('expanded')) capsule.classList.remove('expanded');
+    }
+
+    // Quick Center Toggle Button
+    function toggleBtn(el) {
+        const btn = el.querySelector('.qc-circle-btn');
+        if (btn) btn.classList.toggle('active');
     }
 
     // Keypad Input
@@ -1610,12 +1828,30 @@ root@bullet-os:~# </div>
         document.getElementById('keypadNumber').innerText += d;
     }
 
-    // Slider Drag Simulation
-    function dragSlider(el, ev) {
+    // Horizontal Slider Drag
+    function dragHSlider(el, ev) {
         const rect = el.getBoundingClientRect();
-        const clickY = ev.clientY - rect.top;
-        const fillPercent = Math.max(10, Math.min(100, Math.round(((rect.height - clickY) / rect.height) * 100)));
-        el.querySelector('.vertical-slider-fill').style.height = fillPercent + '%';
+        const clickX = ev.clientX - rect.left;
+        const fillPercent = Math.max(10, Math.min(100, Math.round((clickX / rect.width) * 100)));
+        el.querySelector('.horizontal-slider-fill').style.width = fillPercent + '%';
+        el.querySelector('.horizontal-slider-percent').innerText = fillPercent + '%';
+    }
+
+    // RAM Clean Animation
+    function cleanRam(el) {
+        el.innerHTML = `<span>⚡ <strong>System Optimizer:</strong> Cleaning background apps...</span>`;
+        setTimeout(() => {
+            el.innerHTML = `<span>⚡ <strong>Optimized:</strong> Purged 3.4 GB! 1.4 GB / 12 GB active</span>`;
+        }, 800);
+    }
+
+    // Widget Boost Animation
+    function triggerBoostAnim(widget) {
+        const gauge = document.getElementById('widgetGauge');
+        gauge.innerHTML = "<span>⚡</span>";
+        setTimeout(() => {
+            gauge.innerHTML = "<span>100%</span>";
+        }, 600);
     }
 
     // Terminal Commands
@@ -1628,39 +1864,41 @@ root@bullet-os:~# </div>
 
             let output = '';
             if (cmd === 'help') {
-                output = 'Commands: neofetch, uname, top, ps, bulletd, clear, date';
+                output = 'Available commands: neofetch, uname, top, ps, bulletd, clear, date, boost';
             } else if (cmd === 'neofetch') {
                 output = 
-`  ⚡ BULLET-OS ⚡       root@bullet-os
-  -----------------       -------------
-  OS: Bullet-OS 1.0 (iOS Fluid Edition)
+`  ⚡ BULLET-OS ⚡       bullet@bullet-os
+  -----------------       ----------------
+  OS: Bullet-OS 1.0 (AquaFlow Edition)
   Vendor: BULLET IT Solutions
-  Host: Generic ARM64 Treble / iPhone Form
+  Host: Bullet Ultra Pro Flagship Chassis
   Kernel: Linux 6.1.75-bullet-arm64
-  Shell: /bin/zsh (AOSP Core + Bulletd)
-  UI Shell: Bullet SpringBoard (iOS Glass)
+  Shell: /bin/zsh (Core Framework + bulletd)
+  UI Shell: Bullet AquaFlow Engine
   CPU: 8-Core ARMv8 / Performance Schedutil
-  Memory: 2540MB / 8192MB (zRAM LZ4 active)
-  Display: 120Hz ProMotion HDR`;
+  Memory: 2480MB / 12288MB (zRAM LZ4 active)
+  Display: 120Hz HyperMotion OLED`;
             } else if (cmd === 'uname' || cmd === 'uname -a') {
                 output = 'Linux bullet-os 6.1.75-bullet-arm64 #1 SMP PREEMPT 2026 aarch64 GNU/Linux (BULLET IT Solutions)';
             } else if (cmd === 'bulletd') {
-                output = 'bulletd: Core Governor Daemon ONLINE | IPC: /dev/socket/bulletd | Mode: GAMING_BOOST';
+                output = 'bulletd: Core Performance Daemon ONLINE | IPC: /dev/socket/bulletd | Mode: GAMING_BOOST (Aquamorphic)';
             } else if (cmd === 'clear') {
-                history.innerText = 'root@bullet-os:~# ';
+                history.innerText = 'bullet@bullet-os:~$ ';
                 return;
+            } else if (cmd === 'boost') {
+                output = 'Executing bulletd Governor Overclock: CPU freq locked to max (3.2 GHz), 120Hz locked.';
             } else if (cmd === 'ps') {
                 output = 
 `PID  TTY          TIME CMD
   1  ?        00:00:03 init
  28  ?        00:00:01 bulletd (Performance Daemon)
- 45  ?        00:00:15 bullet_springboard (iOS Shell)
- 89  ?        00:00:02 system_server (AOSP)`;
+ 45  ?        00:00:15 bullet_aquaflow (UI Shell)
+ 89  ?        00:00:02 system_server`;
             } else if (cmd.length > 0) {
                 output = `zsh: command not found: ${cmd}`;
             }
 
-            history.innerText += `${cmd}\n${output}\nroot@bullet-os:~# `;
+            history.innerText += `${cmd}\n${output}\nbullet@bullet-os:~$ `;
             history.scrollTop = history.scrollHeight;
         }
     }

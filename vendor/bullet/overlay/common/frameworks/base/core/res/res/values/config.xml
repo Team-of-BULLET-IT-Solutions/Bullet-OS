@@ -2,39 +2,39 @@
 <!--
 /*
 ** Copyright (C) 2026 BULLET IT Solutions
-** Bullet-OS Framework Resource Overlays (Apple iOS Fluid Shell Configuration)
+** Bullet-OS Framework Resource Overlays (Bullet AquaFlow UI Shell Configuration)
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Enable gesture navigation as default navigation mode (iOS Home Bar style) -->
+    <!-- Enable gesture navigation as default navigation mode (Bullet Fluid Gesture Bar) -->
     <integer name="config_navBarInteractionMode">2</integer>
 
     <!-- Enable system-wide rounded corners & blur -->
     <bool name="config_enableBlur">true</bool>
 
-    <!-- Continuous Curvature Squircle Icon Mask (Apple iOS Superellipse) -->
+    <!-- Continuous Curvature Squircle Icon Mask (Bullet Pebble Squircle Mask) -->
     <string name="config_icon_mask" translatable="false">"M 50,0 C 70,0 100,0 100,50 C 100,100 70,100 50,100 C 0,100 0,70 0,50 C 0,0 30,0 50,0 Z"</string>
 
-    <!-- Rounded Corner Radii for Modern Displays (iPhone-style curvature) -->
+    <!-- Rounded Corner Radii for Modern Displays (Bullet Curved Display Profile) -->
     <dimen name="rounded_corner_radius">46dp</dimen>
     <dimen name="rounded_corner_radius_top">46dp</dimen>
     <dimen name="rounded_corner_radius_bottom">46dp</dimen>
 
-    <!-- Status Bar Height configured for Bullet Island cutout -->
+    <!-- Status Bar Height configured for Bullet Capsule cutout -->
     <dimen name="status_bar_height">48dp</dimen>
     <dimen name="status_bar_height_portrait">48dp</dimen>
 
     <!-- Default screen timeout: 2 minutes -->
     <integer name="config_screenOffDelayDefault">120000</integer>
 
-    <!-- 120Hz ProMotion Display Support -->
+    <!-- 120Hz HyperMotion Display Support -->
     <integer name="config_defaultRefreshRate">120</integer>
     <integer name="config_defaultPeakRefreshRate">120</integer>
 
     <!-- Modern haptics profile -->
     <bool name="config_enableHapticFeedback">true</bool>
 
-    <!-- Quick Settings / Control Center Columns (iOS Modular Grid) -->
+    <!-- Quick Settings / Control Center Columns (Bullet AquaFlow Modular Grid) -->
     <integer name="quick_settings_num_columns">2</integer>
     <integer name="quick_settings_max_rows">4</integer>
 </resources>

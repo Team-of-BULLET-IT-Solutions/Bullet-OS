@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2026 BULLET IT Solutions
- * Bullet-OS Settings Extension - iOS Inset Grouped Design Language
+ * Bullet-OS Settings Extension - Bullet AquaFlow Design Language
  */
 
 package org.bulletos.settings
@@ -33,7 +33,7 @@ class BulletLabActivity : Activity() {
             setPadding(36, 50, 36, 40)
         }
 
-        // Header Title (iOS large title)
+        // Header Title (Bullet Flow large title)
         val title = TextView(this).apply {
             text = "⚡ Bullet Lab"
             textSize = 34f
@@ -43,7 +43,7 @@ class BulletLabActivity : Activity() {
         }
 
         val subtitle = TextView(this).apply {
-            text = "Engineered by BULLET IT Solutions (iOS Fluid Shell)"
+            text = "Engineered by BULLET IT Solutions (Bullet Flow UI)"
             textSize = 13f
             setTextColor(Color.parseColor("#8E8E93"))
             setPadding(0, 0, 0, 24)
@@ -52,7 +52,7 @@ class BulletLabActivity : Activity() {
         root.addView(title)
         root.addView(subtitle)
 
-        // BULLET ID Profile Card (iOS profile card)
+        // BULLET ID Profile Card
         val profileCard = LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
             setBackgroundColor(Color.parseColor("#1C1C1E"))
@@ -89,7 +89,7 @@ class BulletLabActivity : Activity() {
         }
         root.addView(profileCard)
 
-        // Section 1: Performance (iOS Inset Grouped Box)
+        // Section 1: Performance (Bullet Card Container)
         val perfGroup = createSection("PERFORMANCE & KERNEL")
         val boostSwitch = Switch(this).apply {
             text = "🚀 Bullet Boost (Gaming Overclock)"
@@ -123,7 +123,7 @@ class BulletLabActivity : Activity() {
         // Section 3: About
         val aboutGroup = createSection("SYSTEM SPECIFICATIONS")
         val infoText = TextView(this).apply {
-            text = "Operating System: Bullet-OS 1.0 (Kinetic)\nUI Experience: Apple iOS Fluid Style\nBase Foundation: Linux 6.1 LTS + AOSP 14\nOwner & Maintainer: BULLET IT Solutions"
+            text = "Operating System: Bullet-OS 1.0 (Kinetic)\nUI Experience: Bullet Flow UI (Aquamorphic Engine)\nBase Foundation: Linux 6.1 LTS + AOSP 14\nOwner & Maintainer: BULLET IT Solutions"
             setTextColor(Color.parseColor("#C7C7CC"))
             textSize = 13f
             setLineSpacing(12f, 1f)

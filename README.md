@@ -29,8 +29,8 @@ With native **Project Treble Generic System Image (GSI)** compliance and **x86_6
 | **🛡️ Bullet Shield** | Enhanced hardware privacy engine with real-time sensor isolation, network guard, and hardened SELinux policy. |
 | **📱 Project Treble GSI** | Flashable system image (`system.img`) compatible with any device running Android 9 through Android 15. |
 | **💻 Bullet Terminal** | Integrated root Linux shell application (`/system_ext/bin/sh`, `toybox`, `top`, `dmesg`, `ps`) for power users and developers. |
-| **🎨 Apple iOS Fluid UI Shell** | Pixel-perfect iOS 18 design language: Bullet Island (Dynamic Island), iOS Control Center with blurred vertical sliders, 22.5% superellipse continuous curvature squircle icons, and floating frosted glass dock. |
-| **🖥️ Interactive Web Simulator** | Experience Bullet-OS directly in your web browser with a full interactive iPhone 16 Pro form factor, live Dynamic Island, Control Center, and working shell! |
+| **🎨 Bullet AquaFlow UI Shell** | Aquamorphic fluid design language: Bullet Capsule (fluid task status cloud), Quick Center with dual-tile network controls and smooth brightness & volume sliders, Pebble squircle icons, and organic card-based hierarchy. |
+| **🖥️ Interactive Web Simulator** | Experience Bullet-OS directly in your web browser with a full interactive flagship form factor, live Bullet Capsule, Quick Center, Smart Widgets Shelf, and working Linux terminal! |
 
 ---
 
